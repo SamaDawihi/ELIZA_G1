@@ -2,12 +2,19 @@ from break_text import remove_plural
 
 def question_is_about(question):
     single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can']
+    
+    if "what" in question:
+        return "thing"
     if "when" in question:
         return "time"
     if "where" in question:
         return "location"
     if "who" in question:
         return "person"
+    if "how" in question:
+        return "how"
+    if "how many" in question or "how much" in question:
+        return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
         'yes/no'
     return 'not a question'

@@ -27,6 +27,9 @@ def analyze_question(question):
     if is_it_about_welcoming(question):
         return get_welcome(question)
     
+    if question_is_about(question) == 'not a question':
+        return not_question[update_counter("not_question")]
+    
     if is_it_about_general_health(question):
         return get_general_health_questions()
 
