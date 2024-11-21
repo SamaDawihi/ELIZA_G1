@@ -11,21 +11,21 @@ def analyze_question(question):
     question = question.lower().split()  # Convert the question to lowercase for easier matching 
 
     # Check if the question is about players
-    if "player" in question: 
-        return get_player_questions()
+    if "player" in question or "players" in question: 
+        return get_player_questions(question)
 
     # Check if the question is about achievements
     if "achievements" in question:
-        return get_achievements_info()
+        return get_achievements_info(question)
 
     # Check if the question is about general information
     if "general" in question:
-        return get_general_questions()
+        return get_general_questions(question)
 
 
     # Check if the question satisfies the club info condition
     if "club" in question:
-        return get_club_questions()
+        return get_club_questions(question)
 
     
     # Default response if no known conditions are met

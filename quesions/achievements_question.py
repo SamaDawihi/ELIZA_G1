@@ -1,4 +1,4 @@
-def get_achievements_info():
+def get_achievements_info(question):
     related = True
     return related, "achievments"
 

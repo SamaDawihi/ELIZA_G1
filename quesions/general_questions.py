@@ -1,4 +1,4 @@
-def get_general_questions():
+def get_general_questions(question):
     related = True
     return related, "general"
 

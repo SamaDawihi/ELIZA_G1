@@ -1,4 +1,4 @@
-def get_club_questions():
+def get_club_questions(question):
     related = True
     return related, "hilal"
 

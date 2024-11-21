@@ -16,7 +16,7 @@ achievement = {
         "Saudi Super Cup": "3 times"
     }
 
-players_info = [
+current_players = [
     {"name": "Salem Al-Dawsari", "position": "Wing", "number": 29},
     {"name": "Aleksandar Mitrović", "position": "Forward", "number": 9},
     {"name": "Malcom", "position": "Forward", "number": 77},
@@ -41,7 +41,7 @@ players_info = [
     {"name": "Mohammed Al-Rubaie", "position": "Goalkeeper", "number": 17},
 ]
 
-former_players_info = [
+former_players = [
     {"name": "Yasser Al-Qahtani", "position": "Forward", "number": 20},
     {"name": "Sami Al-Jaber", "position": "Forward", "number": 9},
     {"name": "Mohammed Al-Shalhoub", "position": "Midfielder", "number": 10},
