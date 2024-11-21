@@ -17,3 +17,6 @@ Thumbs.db
 /__pycache__
 /quesions/__pycache__
 *.pyc
+*.pyc
+__pycache__/hilal_data.cpython-313.pyc
+/quesions/__pycache__
