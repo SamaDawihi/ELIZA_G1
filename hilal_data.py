@@ -39,3 +39,14 @@ players_info = [
     {"name": "Mohammed Al-Owais", "position": "Goalkeeper", "number": 21},
     {"name": "Mohammed Al-Rubaie", "position": "Goalkeeper", "number": 17},
 ]
+
+former_players_info = [
+    {"name": "Yasser Al-Qahtani", "position": "Forward", "number": 20},
+    {"name": "Sami Al-Jaber", "position": "Forward", "number": 9},
+    {"name": "Mohammed Al-Shalhoub", "position": "Midfielder", "number": 10},
+    {"name": "Radoi Mirel", "position": "Midfielder", "number": 8},
+    {"name": "Thiago Neves", "position": "Midfielder", "number": 7},
+    {"name": "Ahmed Al-Dokhi", "position": "Defender", "number": 2},
+    {"name": "Osama Hawsawi", "position": "Defender", "number": 33},
+    {"name": "Abdullah Al-Sudairy", "position": "Goalkeeper", "number": 1},
+]
