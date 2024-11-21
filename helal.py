@@ -1,5 +1,5 @@
 import streamlit as st
-
+from hilal_data import *
 
 # وظيفة لتحليل النصوص والإجابة على الأسئلة
 def analyze_question(question):
@@ -7,7 +7,7 @@ def analyze_question(question):
     keywords = ["فريق", "الهلال", "لاعب", "اللاعبين", "قائمة", "تأسيس", "بطولات", "ملعب"]
 
     # البحث عن لاعب معين
-    for player in team_data["players"]:
+    for player in players_info:
         if player["name"] in question:
             return (
                 f"اسم اللاعب: {player['name']}\n"
@@ -17,7 +17,7 @@ def analyze_question(question):
 
     # معلومات عن الفريق
     if any(keyword in question for keyword in ["فريق", "الهلال"]):
-        info = team_data["team_info"]
+        info = Hilal_info
         return (
             f"اسم الفريق: {info['name']}\n"
             f"سنة التأسيس: {info['founded']}\n"
@@ -26,24 +26,24 @@ def analyze_question(question):
         )
 
     # قائمة اللاعبين
-    if any(keyword in question for keyword in ["لاعبين", "قائمة"]):
-        players = team_data["players"]
+    if any(keyword in question for keyword in ["players", "list", 'player']):
+        players = players_info
         return "\n".join([f"{player['name']} - {player['position']}" for player in players])
 
     # بطولات الفريق
     if "بطولات" in question:
         achievements = team_data["team_info"]["achievements"]
-        return f"عدد البطولات التي فاز بها الفريق: {len(achievements)}\n" + "\n".join(achievements)
+        return f"Hilal achievements {len(achievements)}\n" + "\n".join(achievements)
 
-    return "عذرًا، لم أفهم سؤالك. حاول مرة أخرى."
+    return "I don't have any information about anything"
 
 # واجهة المستخدم باستخدام Streamlit
-st.title("مساعد نادي الهلال")
-st.write("مرحبًا! اسألني عن نادي الهلال، مثل اللاعبين، تاريخ الفريق، أو البطولات.")
+st.title("Best Hilalista")
+st.write("I am Al-Hilal biggest fan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is great team.")
 
 # إدخال السؤال من المستخدم
-question = st.text_input("أدخل سؤالك:")
+question = st.text_input("> ")
 
 if question:
     response = analyze_question(question)
-    st.text_area("الإجابة:", value=response, height=200)
+    st.text_area("Hilal Fan:", value=response, height=200)
