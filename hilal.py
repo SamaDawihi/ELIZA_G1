@@ -32,14 +32,37 @@ def analyze_question(question):
     return "I don't have any information about anything other than AlHilal."
 
 
-# واجهة المستخدم باستخدام Streamlit
-st.title("Best Hilalista")
-st.write("I am Al-Hilal biggest fan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is great team.")
+# Streamlit UI
+st.title("Top Hilal fan")
+st.write("I am Al-Hilal top fan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
 
+# Initialize or persist chat history
+if 'questions' not in st.session_state:
+    st.session_state['questions'] = []
+if 'responses' not in st.session_state:
+    st.session_state['responses'] = []
 
-# إدخال السؤال من المستخدم
-question = st.text_input("> ")
+# Display previous messages
+for question, response in zip(st.session_state['questions'], st.session_state['responses']):
+    # Display user messages
+    with st.chat_message("YOU"):
+        st.write(question)
+    # Display assistant messages
+    with st.chat_message("Hilal fan"):
+        st.write(response)
 
+# Capture new user input
+question = st.chat_input("chat with hilal fan ")
 if question:
-    response = analyze_question(question)
-    st.text_area("Hilal Fan:", value=response, height=200)
+    # Add the question to session state
+    st.session_state['questions'].append(question)
+
+    # Generate a response
+    response = analyze_question(question)  # Replace with your function
+    st.session_state['responses'].append(response)
+
+    # Display the new messages
+    with st.chat_message("YOU"):
+        st.write(question)
+    with st.chat_message("Hilal fan"):
+        st.write(response)
