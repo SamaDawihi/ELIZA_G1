@@ -31,8 +31,8 @@ def analyze_question(question):
         return "\n".join([f"{player['name']} - {player['position']}" for player in players])
 
     # بطولات الفريق
-    if "بطولات" in question:
-        achievements = team_data["team_info"]["achievements"]
+    if "achievements" in question:
+        achievements = Hilal_info["achievement"]
         return f"Hilal achievements {len(achievements)}\n" + "\n".join(achievements)
 
     return "I don't have any information about anything"

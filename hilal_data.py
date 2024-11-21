@@ -1,13 +1,19 @@
 Hilal_info = {
     "name": "Al Hilal",
     "founded": 1957,
-    "stadium": "King Fahad international Stadium",
+    "stadium": "King Fahad International Stadium",
     "achievement": {
-            "asia" : "4 times",
-            "Saudi League": "18 times",
-            "king Cup": "9 times"
-            }
-        }
+        "asia": "4 times",
+        "Saudi League": "18 times",
+        "king Cup": "9 times",
+        "crown Prince Cup": "13 times",
+        "Saudi Super Cup": "3 times"
+    },
+    "manager": "Jorge Jesus",
+    "nickname": "The Blue Waves",
+    "city": "Riyadh",
+    "official_website": "https://www.alhilal.com",
+}
 
 players_info = [
     {"name": "Salem Al-Dawsari", "position": "Wing", "number": 29},
