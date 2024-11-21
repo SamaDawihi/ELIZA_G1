@@ -7,8 +7,7 @@ def get_welcome(question):
     for keyword in keywords:
         if keyword in question:
             return keyword
-        else:
-            return "Salam"
+    return "Salam"
         
 def get_general_health_questions():
     return "I am good as long Alhilal is good"
