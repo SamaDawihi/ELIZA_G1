@@ -33,8 +33,8 @@ def analyze_question(question):
 
 
 # Streamlit UI
-st.title("Top Hilal fan")
-st.write("I am Al-Hilal top fan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
+st.title("Mohammed")
+st.write("I am Mohammed, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
 
 # Initialize or persist chat history
 if 'questions' not in st.session_state:
@@ -48,11 +48,11 @@ for question, response in zip(st.session_state['questions'], st.session_state['r
     with st.chat_message("YOU"):
         st.write(question)
     # Display assistant messages
-    with st.chat_message("Hilal fan"):
+    with st.chat_message("Mohammed"):
         st.write(response)
 
 # Capture new user input
-question = st.chat_input("chat with hilal fan ")
+question = st.chat_input("chat with Mohammed")
 if question:
     # Add the question to session state
     st.session_state['questions'].append(question)
@@ -64,5 +64,5 @@ if question:
     # Display the new messages
     with st.chat_message("YOU"):
         st.write(question)
-    with st.chat_message("Hilal fan"):
+    with st.chat_message("Mohammed"):
         st.write(response)
