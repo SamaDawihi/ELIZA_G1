@@ -40,7 +40,7 @@ former_players = [
     {"name": "Abdullah Al-Sudairy", "position": "Goalkeeper", "number": 1},
 ]
 
-Achievements = [
+achievements = [
    {"title": "Saudi Pro League", "count": 19},
     {"title": "King Cup", "count": 10},
     {"title": "Saudi Crown Prince Cup", "count": 13},
