@@ -2,14 +2,22 @@ from quesions.hilal_info_question import *
 from quesions.player_questions import *
 from quesions.achievements_question import *
 from quesions.general_questions import *
+from quesions.welcome_questions import *
 import streamlit as st
 from hilal_data import *
 from escaper import *
+from condition_map import *
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
     # TO DO
     question = question.lower().split()  # Convert the question to lowercase for easier matching 
+
+    if check_welcome(question):
+        return get_welcome(question)
+    
+    if check_general_health(question):
+        return get_general_health_questions()
 
     # Check if the question is about players
     if "player" in question or "players" in question: 

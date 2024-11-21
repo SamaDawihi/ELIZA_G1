@@ -16,3 +16,4 @@ Thumbs.db
 /quesions/__pycache__
 /__pycache__
 /quesions/__pycache__
+*.pyc
