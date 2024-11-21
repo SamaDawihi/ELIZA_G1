@@ -1,3 +1,17 @@
-my_env
-__pycache__
-quesions/__pycache__
+# Ignore virtual environment
+my_env/
+
+# Ignore Python cache files and folders
+__pycache__/
+*.py[cod]
+
+# Ignore specific directory cache
+questions/__pycache__/
+
+# Ignore system or editor-specific files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+/quesions/__pycache__
+/__pycache__
