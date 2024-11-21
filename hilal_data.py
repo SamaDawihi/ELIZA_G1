@@ -2,12 +2,7 @@ Hilal_info = {
     "name": "Al Hilal",
     "founded": 1957,
     "stadium": "King Fahad international Stadium",
-    "achievement": {
-            "asia" : "4 times",
-            "Saudi League": "18 times",
-            "king Cup": "9 times"
-            }
-        }
+}
 
 current_players = [
     {"name": "Salem Al-Dawsari", "position": "Wing", "number": 29},
@@ -43,6 +38,7 @@ former_players = [
     {"name": "Ahmed Al-Dokhi", "position": "Defender", "number": 2},
     {"name": "Osama Hawsawi", "position": "Defender", "number": 33},
     {"name": "Abdullah Al-Sudairy", "position": "Goalkeeper", "number": 1},
+]
 
 Achievements = [
    {"title": "Saudi Pro League", "count": 19},
