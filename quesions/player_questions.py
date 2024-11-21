@@ -5,6 +5,9 @@ def get_player_questions(question):
     return get_current_players(question)
     # return "player"
 
+    # TODO
+    # single player profile
+
 # def player_condition(question):
 #     return "player" in question
 
