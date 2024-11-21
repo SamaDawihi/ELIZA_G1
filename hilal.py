@@ -7,33 +7,44 @@ import streamlit as st
 from hilal_data import *
 from escaper import *
 from condition_map import *
+from spellchecker import SpellChecker
+
+# To check if there are mis spelled words
+spell = SpellChecker()
+
+
+# streamlit run hilal.py
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
     # TO DO
     question = question.lower().split()  # Convert the question to lowercase for easier matching 
+    question = [spell.correction(word) for word in question]
 
-    if check_welcome(question):
+    if is_it_about_welcoming(question) and is_it_about_general_health(question):
+        return get_welcome(question) + ", " + get_general_health_questions()
+
+    if is_it_about_welcoming(question):
         return get_welcome(question)
     
-    if check_general_health(question):
+    if is_it_about_general_health(question):
         return get_general_health_questions()
 
     # Check if the question is about players
-    if "player" in question or "players" in question: 
+    if is_it_about_players(question): 
         return get_player_questions(question)
 
     # Check if the question is about achievements
-    if "achievements" in question:
+    if is_it_about_achievements(question):
         return get_achievements_info(question)
 
     # Check if the question is about general information
-    if "general" in question:
+    if is_it_about_general_info(question):
         return get_general_questions(question)
 
 
     # Check if the question satisfies the club info condition
-    if "club" in question:
+    if is_it_about_club(question):
         return get_club_questions(question)
 
     # Default response if no known conditions are met
