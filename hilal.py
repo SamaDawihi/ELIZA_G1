@@ -4,6 +4,7 @@ from quesions.achievements_question import *
 from quesions.general_questions import *
 import streamlit as st
 from hilal_data import *
+from escaper import *
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
@@ -27,9 +28,8 @@ def analyze_question(question):
     if "club" in question:
         return get_club_questions(question)
 
-    
     # Default response if no known conditions are met
-    return "I don't have any information about anything other than AlHilal."
+    return last_escape[update_counter("last_escape")]
 
 
 # Streamlit UI
