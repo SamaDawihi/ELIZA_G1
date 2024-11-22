@@ -13,7 +13,7 @@ current_players = [
     {"first_name": "Neymar", "last_name": "", "position": "Forward", "number": 10},
     {"first_name": "Rúben", "last_name": "Neves", "position": "Midfielder", "number": 8},
     {"first_name": "Sergej", "last_name": "Milinković-Savić", "position": "Midfielder", "number": 22},
-    {"first_name": "Mohamed", "last_name": "Kanno", "position": "Midfielder", "number": 28},
+    {"first_name": "Mohammed", "last_name": "Kanno", "position": "Midfielder", "number": 28},
     {"first_name": "Nasser", "last_name": "Al-Dawsari", "position": "Midfielder", "number": 16},
     {"first_name": "Khalid", "last_name": "Al-Ghannam", "position": "Midfielder", "number": 7},
     {"first_name": "João", "last_name": "Cancelo", "position": "Defender", "number": 20},

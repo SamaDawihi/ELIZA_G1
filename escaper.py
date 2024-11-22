@@ -9,7 +9,8 @@ escapers = {
         "Ask me about Alhilal only",
         "Stick to the topic"
         ],
-        'counter': 0},
+        'counter': 0
+        },
 
     'injuries_escape': {
         'list': [

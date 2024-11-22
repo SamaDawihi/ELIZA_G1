@@ -7,7 +7,12 @@ synonym = {
     'nassr': ['naser', 'alnaser', 'al-naser', 'nassr', 'alnassr', 'al-nassr', 'nasser', 'alnasser', 'al-nasser'],
     'itihad': ['itihad', 'alitihad', 'al-itihad', 'ittihad', 'alittihad', 'al-ittihad'],
     'ahli': ['ahly', 'alahly', 'al-ahly', 'ahli', 'alahli', 'al-ahli',],
-    'nishimura': ['nishimora']
+    'nishimura': ['nishimora'],
+    'defender': ['df'],
+    # TODO complete the list
+    'mohammed': ['mohamed'],
+    'Kanno': ['kano']
+
     }
 
 

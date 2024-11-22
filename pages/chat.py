@@ -40,7 +40,7 @@ def analyze_question(question):
         return 'Bye'
     
     # if just 2 words. ex: "I like"
-    if len(question) < 3:
+    if len(question) < 3 :
             return "what?"
     
     # Not a question, Does not have [what, when, ...]
@@ -51,13 +51,14 @@ def analyze_question(question):
     if is_it_about_escape(question):
         return get_escape_answers(question)
 
+    # TODO 
     # if is_it_yesno():
     #     return get_yesno_answers()
 
     # Check if the question is about players
     if is_it_about_players(question): 
         return get_player_questions(question)
-
+    
     # Check if the question is about achievements
     if is_it_about_achievements(question):
         return get_achievements_info(question) #Salwa
@@ -73,6 +74,7 @@ def analyze_question(question):
 
     # Default response if no known conditions are met
     return update_counter("last_escape")
+
 
 def show():
     st.title("Mohammed")
