@@ -1,22 +1,11 @@
-# Ignore virtual environment
-my_env/
-
-# Ignore Python cache files and folders
+__pycache__
 __pycache__/
-*.py[cod]
-
-# Ignore specific directory cache
 questions/__pycache__/
+pages/__pycache__/
 
-# Ignore system or editor-specific files
 *.swp
 *.swo
 .DS_Store
 Thumbs.db
-/quesions/__pycache__
-/__pycache__
-/quesions/__pycache__
+*.py[cod]
 *.pyc
-*.pyc
-__pycache__/hilal_data.cpython-313.pyc
-/quesions/__pycache__
