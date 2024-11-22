@@ -19,6 +19,10 @@ def analyze_question(question):
     question = question.lower().split()  # Convert the question to lowercase for easier matching
     # question = [spell.correction(word) for word in question]
     print(question)
+
+    # check if question is in arabic
+    if is_it_in_arabic(question):
+        return arabic_escape[update_counter("arabic_escape")]
     
     # Hi, How are You
     if is_it_about_welcoming(question) and is_it_about_general_health(question):
@@ -41,8 +45,8 @@ def analyze_question(question):
         return not_question[update_counter("not_question")]
     
     # If it include escape topics. ex [nassr, injuries]
-    # if is_it_about_escape(question):
-    #     return get_escape_questions(question)
+    if is_it_about_escape(question):
+        return get_escape_questions(question)
 
     # if is_it_yesno():
     #     return get_yesno_answers()

@@ -1,4 +1,5 @@
 from break_text import remove_plural
+from synonym import search
 
 def question_is_about(question):
     single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could']
@@ -21,6 +22,9 @@ def question_is_about(question):
         return 'question'
     return 'not a question'
 
+def is_it_in_arabic(question):
+    return sum(1 for char in ''.join(question) if '\u0600' <= char <= '\u06FF') > 0
+
 def is_it_about_welcoming(question):
     keywords = [
         "hi", "hello", "welcome", "hey", "greetings", "howdy",
@@ -31,9 +35,12 @@ def is_it_about_welcoming(question):
 
 def is_it_about_escape(question):
     keywords = [
-        "nassr", 'injuries', 'injury'
+        "nassr", 'injuries', 'injury', 'itihad', 'ahli'
     ]
-    return any(keyword in question for keyword in keywords)
+    for q in question:
+        if search(q) in keywords:
+            return True
+    return False
 
 def is_it_about_general_health(question):
     keywords = [
