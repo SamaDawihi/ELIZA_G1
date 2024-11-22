@@ -1,3 +1,4 @@
+from quesions.escape_question import *
 from quesions.hilal_info_question import *
 from quesions.player_questions import *
 from quesions.achievements_question import *
