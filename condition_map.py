@@ -1,4 +1,5 @@
 from break_text import remove_plural
+from quesions.player_answers import get_player_in_question
 from synonym import search
 
 def question_is_about(question):
@@ -17,7 +18,7 @@ def question_is_about(question):
     if "how many" in question or "how much" in question:
         return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
-        'yes/no'
+        return 'yes/no'
     if '?' in question:
         return 'question'
     return 'not a question'
@@ -71,8 +72,11 @@ def is_it_about_general_health(question):
 def is_it_about_players(question):
     keywords = [
         "position", "player", "players"
-        # 'players name', 'player's number'
     ]
+    player = get_player_in_question(question)
+    print(player)
+    if player:
+        return True
     return any(keyword in question for keyword in keywords)
 
 # achievements
@@ -121,3 +125,9 @@ def is_it_about_club(question):
 
 def is_it_about_foundation(question):
     return 'founded' in question and question_is_about(question) == 'time'
+
+def is_it_about_farewell(question):
+    keywords = [
+        "bye", "goodbye", "farewell"
+    ]
+    return any(keyword in question for keyword in keywords)

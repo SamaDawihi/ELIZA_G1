@@ -22,7 +22,7 @@ def analyze_question(question):
 
     # check if question is in arabic
     if is_it_in_arabic(question):
-        return arabic_escape[update_counter("arabic_escape")]
+        return update_counter("arabic_escape")
     
     # Hi, How are You
     if is_it_about_welcoming(question) and is_it_about_general_health(question):
@@ -36,13 +36,16 @@ def analyze_question(question):
     if is_it_about_general_health(question):
         return get_general_health_questions()
     
+    if is_it_about_farewell(question):
+        return 'Bye'
+    
     # if just 2 words. ex: "I like"
     if len(question) < 3:
             return "what?"
     
     # Not a question, Does not have [what, when, ...]
     if question_is_about(question) == 'not a question':        
-        return not_question[update_counter("not_question")]
+        return update_counter("not_question")
     
     # If it include escape topics. ex [nassr, injuries]
     if is_it_about_escape(question):
@@ -69,7 +72,7 @@ def analyze_question(question):
         return get_club_questions(question)
 
     # Default response if no known conditions are met
-    return last_escape[update_counter("last_escape")]
+    return update_counter("last_escape")
 
 def show():
     st.title("Mohammed")
