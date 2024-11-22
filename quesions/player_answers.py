@@ -10,7 +10,7 @@ def get_player_questions(question):
 
         # التحقق إذا كان السؤال عن لاعب معين
         for player in current_players + former_players:
-            if player["name"].lower() in question:
+            if player["f_name"].lower() in question or player["l_name"].lower() in question:
                 return get_player_by_name(question)
 
         # في حال لم يتم التعرف على السؤال
@@ -39,10 +39,12 @@ def get_players_by_position(question):
             return f"No players found in the position: {position}."
     return "I couldn't understand the position you're asking about."
 
+def get_player_position_by_name(question):
+    return "salem"
+
 def get_player_by_number(question):
     all_players = current_players + former_players
     for player in all_players:
         if str(player["number"]) in question:
             return f"Player with number {player['number']}:\nName: {player['name']}\nPosition: {player['position']}"
     return "I couldn't find any player with that number."
-

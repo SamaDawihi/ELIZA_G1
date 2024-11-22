@@ -3,7 +3,8 @@ Hilal_info = {
     "founded": 1957,
     "stadium": "King Fahad international Stadium",
 }
-
+# how many number of wins
+# what is the player with number 29
 current_players = [
     {"name": "Salem Al-Dawsari", "position": "Wing", "number": 29},
     {"name": "Aleksandar Mitrović", "position": "Forward", "number": 9},

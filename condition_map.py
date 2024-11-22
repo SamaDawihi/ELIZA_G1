@@ -17,6 +17,8 @@ def question_is_about(question):
         return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
         'yes/no'
+    if '?' in question:
+        return 'question'
     return 'not a question'
 
 def is_it_about_welcoming(question):
@@ -45,7 +47,11 @@ def is_it_about_general_health(question):
     return any(all(word in question for word in phrase) for phrase in keywords)
 
 def is_it_about_players(question):
-    return "player" in question or "players" in question
+    keywords = [
+        "position", "player", "players"
+        # 'players name', 'player's number'
+    ]
+    return any(keyword in question for keyword in keywords)
 
 # achievements
 def is_it_about_achievements(question):
@@ -63,7 +69,7 @@ def is_it_about_achievements(question):
 def is_it_about_asia_achievements(question):
     keywords = [
         "champion", "league", "asian champion",
-        "afc champions league"        
+        "afc champions league", 'afc'       
     ]
     return any(keyword in question for keyword in keywords)
 

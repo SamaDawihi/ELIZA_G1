@@ -1,9 +1,9 @@
-from quesions.escape_question import *
+from quesions.escape_answers import *
 from quesions.hilal_info_question import *
-from quesions.player_questions import *
-from quesions.achievements_question import *
-from quesions.general_questions import *
-from quesions.welcome_questions import *
+from quesions.player_answers import *
+from quesions.achievements_answers import *
+from quesions.other_games_answers import *
+from quesions.welcome_answers import *
 import streamlit as st
 from hilal_data import *
 from escaper import *
@@ -17,7 +17,7 @@ spell = SpellChecker()
 # Function to analyze text and respond to questions
 def analyze_question(question):
     # TO DO
-    question = question.lower().split()  # Convert the question to lowercase for easier matching 
+    question = question.lower().split()  # Convert the question to lowercase for easier matching
     question = [spell.correction(word) for word in question]
     
     # Hi, How are You
@@ -34,17 +34,15 @@ def analyze_question(question):
     
     # if just 2 words. ex: "I like"
     if len(question) < 3:
-            return "?"
+            return "what?"
     
     # Not a question, Does not have [what, when, ...]
     if question_is_about(question) == 'not a question':        
-        if len(question) < 5:
-            return very_short[update_counter("very_short")]
         return not_question[update_counter("not_question")]
     
     # If it include escape topics. ex [nassr, injuries]
-    if is_it_about_escape(question):
-        return get_escape_questions(question)
+    # if is_it_about_escape(question):
+    #     return get_escape_questions(question)
     
 
     # Check if the question is about players
@@ -53,7 +51,7 @@ def analyze_question(question):
 
     # Check if the question is about achievements
     if is_it_about_achievements(question):
-        return get_achievements_info(question)
+        return get_achievements_info(question) #Salwa
 
     # Check if the question is about general information
     if is_it_about_general_info(question):
