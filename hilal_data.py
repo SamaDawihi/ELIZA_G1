@@ -53,3 +53,31 @@ achievements = [
 ]
 
 
+alhilal_Genral_info = {
+    "sports": [
+        {"sport": "Volleyball", "description": "A game where the ball is sent over the net, aiming to land it in the opponent's court."},
+        {"sport": "Basketball", "description": "Each team tries to score points by shooting the ball into the opponent's hoop."},
+        {"sport": "Taekwondo", "description": "A popular martial art focusing on fast kicks, punches, and strong defensive moves."},
+        {"sport": "Karate", "description": "A combat sport based on precise punches and kicks, with the goal of scoring points."},
+        {"sport": "Squash", "description": "A racket sport where the ball is hit against the wall to make it hard for the opponent to return."},
+        {"sport": "Tennis", "description": "A sport where the ball is hit with a racket over a net, aiming to score points."},
+        {"sport": "Athletics", "description": "Includes running, jumping, and throwing events and is one of the oldest global sports."},
+        {"sport": "Handball", "description": "Two teams pass the ball and try to score goals in the opponent's net."},
+        {"sport": "Table Tennis", "description": " players hit a small ball on a table using paddles."},
+        {"sport": "Swimming", "description": "A water sport featuring styles like freestyle, backstroke, breaststroke, and butterfly."},
+        {"sport": "Judo", "description": "A martial art focused on grappling and throwing the opponent to the ground."},
+        {"sport": "Badminton", "description": "A light game where players hit the shuttlecock with a racket, aiming to land it on the opponent's side."},
+        {"sport": "Cycling", "description": "Races conducted on roads, tracks, or trails, requiring endurance and strength."},
+        {"sport": "Esports", "description": "Competitive video gaming in various genres, played individually or in teams."},
+        {"sport": "Weightlifting", "description": "A strength sport where athletes lift heavy weights in specific formats to compete."}
+    ],
+
+    "youth_teams": [
+        {"age_group": "U23", "description": "The under-23 team prepares players for professional football."},
+        {"age_group": "U21", "description": "The under-21 team focuses on advanced skill development."},
+        {"age_group": "U19", "description": "The under-19 team competes in youth leagues."},
+        {"age_group": "U17", "description": "The under-17 team works on strengthening basic skills."},
+        {"age_group": "U15", "description": "The under-15 team focuses on early talent scouting."}
+    ]
+}
+
