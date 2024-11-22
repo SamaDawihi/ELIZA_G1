@@ -8,17 +8,17 @@ import streamlit as st
 from hilal_data import *
 from escaper import *
 from condition_map import *
-from spellchecker import SpellChecker
+# from spellchecker import SpellChecker
 
 # To check if there are mis spelled words
-spell = SpellChecker()
+# spell = SpellChecker()
 
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
-    # TO DO
     question = question.lower().split()  # Convert the question to lowercase for easier matching
-    question = [spell.correction(word) for word in question]
+    # question = [spell.correction(word) for word in question]
+    print(question)
     
     # Hi, How are You
     if is_it_about_welcoming(question) and is_it_about_general_health(question):
