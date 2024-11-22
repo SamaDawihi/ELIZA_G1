@@ -18,6 +18,8 @@ nassr_escape = [
     "what is the nassr",
 ]
 
+
+
 not_question = [
     "That is suprising",
     "OK",

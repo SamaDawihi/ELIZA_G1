@@ -61,10 +61,10 @@ def is_it_about_achievements(question):
     ]
     
     # Remove plural forms if necessary
-    modified_question = [remove_plural(q) for q in question]
+    # modified_question = [remove_plural(q) for q in question]
     
     # Check if any keyword is present in the question
-    return any(keyword in modified_question for keyword in keywords) or is_it_about_asia_achievements(question) or is_it_about_spl_achievements(question) or is_it_about_super_achievements(question) or is_it_about_world_achievements(question)
+    return any(keyword in question for keyword in keywords) or is_it_about_asia_achievements(question) or is_it_about_spl_achievements(question) or is_it_about_super_achievements(question) or is_it_about_world_achievements(question)
 
 def is_it_about_asia_achievements(question):
     keywords = [

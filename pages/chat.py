@@ -43,7 +43,9 @@ def analyze_question(question):
     # If it include escape topics. ex [nassr, injuries]
     # if is_it_about_escape(question):
     #     return get_escape_questions(question)
-    
+
+    # if is_it_yesno():
+    #     return get_yesno_answers()
 
     # Check if the question is about players
     if is_it_about_players(question): 
