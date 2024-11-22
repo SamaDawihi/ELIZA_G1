@@ -68,6 +68,10 @@ arabic_escape = [
     "use google translate if you can't speak english",
 ]
 
+nishimura_escape = [
+    "I cant hear you",
+]
+
 # when adding a new list update 2 things: counters - get_list method
 counters = {
     "last_escape" : 0,
@@ -78,6 +82,8 @@ counters = {
     "not_question" : 0,
     "very_short" : 0,
     "arabic_escape" : 0,
+    "nishimura_escape": 0,
+    "other_teams_escape": 0,
 }
 
 # Update counter
@@ -103,5 +109,7 @@ def get_list(escape):
         "not_question": not_question,
         "very_short": very_short,
         "arabic_escape": arabic_escape,
+        "nishimura_escape": nishimura_escape,
+        "other_teams_escape": other_teams_escape,
     }
     return escape_lists.get(escape)

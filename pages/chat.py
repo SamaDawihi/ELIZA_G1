@@ -46,7 +46,7 @@ def analyze_question(question):
     
     # If it include escape topics. ex [nassr, injuries]
     if is_it_about_escape(question):
-        return get_escape_questions(question)
+        return get_escape_answers(question)
 
     # if is_it_yesno():
     #     return get_yesno_answers()

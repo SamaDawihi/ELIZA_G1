@@ -4,7 +4,7 @@ from synonym import search
 def question_is_about(question):
     single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could']
     
-    if "what" in question:
+    if "what" in question or "tell" in question:
         return "thing"
     if "when" in question:
         return "time"
@@ -35,12 +35,27 @@ def is_it_about_welcoming(question):
 
 def is_it_about_escape(question):
     keywords = [
-        "nassr", 'injuries', 'injury', 'itihad', 'ahli'
+        "nassr", 'injuries', 'injury', 'itihad', 'ahli', 'nishimura'
     ]
     for q in question:
         if search(q) in keywords:
             return True
-    return False
+    return is_it_about_other_teams(question)
+
+def is_it_about_other_teams(question):
+    keywords = [
+        'alain', 'ain', 'urawa', 'orawa', 'itifaq', 'ittifaq',
+        'ittihad', 'itihad', 'ahli', 'alahli', 'nassr', 'alnassr',
+        'shabab', 'alshabab', 'wehdah', 'alwehdah', 'fateh', 'alfateh',
+        'damak', 'aldamak', 'taawon', 'altaawon', 'baha', 'albaha',
+        'hajer', 'alhajer', 'kawkab', 'alkawkab', 'raed', 'alraed',
+        'batin', 'albatin', 'khaleej', 'alkhaleej', 'hilm', 'alhilm',
+        'qadisiyah', 'alqadisiyah', 'najran', 'alnajran', 'hazm', 'alhazm',
+        'wahda', 'wahdah', 'alwahda', 'nakhil', 'alnakhil', 'jeblah', 'aljeblah',
+        'tabouk', 'altabouk'
+    ]
+    return any(keyword in question for keyword in keywords)
+
 
 def is_it_about_general_health(question):
     keywords = [
@@ -92,7 +107,7 @@ def is_it_about_super_achievements(question):
 
 def is_it_about_world_achievements(question):
     keywords = [
-        "world cup", "silver", "second", "real madrid"
+        "world cup", "silver", "second", "madrid"
     ]
     return any(keyword in question for keyword in keywords)
 
