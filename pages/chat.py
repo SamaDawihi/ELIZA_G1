@@ -1,5 +1,5 @@
 from quesions.escape_answers import *
-from quesions.hilal_info_question import *
+from quesions.hilal_info_answers import *
 from quesions.player_answers import *
 from quesions.achievements_answers import *
 from quesions.other_games_answers import *
