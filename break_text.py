@@ -20,6 +20,3 @@ def remove_plural(question):
     lemmatized_words = [lemmatizer.lemmatize(word) for word in question.split()]
     return ' '.join(lemmatized_words)
 
-# Example usage
-print(remove_stop_words("what is the other names of alhilal"))
-print(remove_plural("what is the other names of alhilal players"))
