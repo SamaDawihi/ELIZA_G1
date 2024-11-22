@@ -10,7 +10,9 @@ def get_player_questions(question):
 
         # التحقق إذا كان السؤال عن لاعب معين
         for player in current_players + former_players:
+            print("player name", player["first_name"].lower())
             if player["first_name"].lower() in question or player["last_name"].lower() in question:
+                
                 return get_player_by_name(question)
 
         # في حال لم يتم التعرف على السؤال
