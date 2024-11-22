@@ -27,8 +27,11 @@ def is_it_about_welcoming(question):
     ]
     return any(keyword in question for keyword in keywords)
 
-def is_it_about_players(question):
-    return "player" in question or "players" in question
+def is_it_about_escape(question):
+    keywords = [
+        "nassr", 'injuries', 'injury'
+    ]
+    return any(keyword in question for keyword in keywords)
 
 def is_it_about_general_health(question):
     keywords = [
@@ -40,6 +43,9 @@ def is_it_about_general_health(question):
         ["how", "have", "you", "been"]
     ]
     return any(all(word in question for word in phrase) for phrase in keywords)
+
+def is_it_about_players(question):
+    return "player" in question or "players" in question
 
 # achievements
 def is_it_about_achievements(question):
