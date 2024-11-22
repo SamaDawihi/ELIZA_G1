@@ -1,8 +1,5 @@
 import streamlit as st
 
-st.title("Custom Background Color")
-st.write("This app has a custom background color!")
-
 pg = st.navigation([
     st.Page("pages/home.py", title="Home", icon=":material/home:"),
     st.Page("pages/chat.py", title="Chat", icon=":material/chat:"),

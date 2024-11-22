@@ -25,7 +25,13 @@ def analyze_question(question):
     if is_it_about_welcoming(question):
         return get_welcome(question)
     
-    if question_is_about(question) == 'not a question':
+    # if just 2 words. ex: "I like"
+    if len(question) < 3:
+            return "?"
+    
+    if question_is_about(question) == 'not a question':        
+        if len(question) < 5:
+            return very_short[update_counter("very_short")]
         return not_question[update_counter("not_question")]
     
     if is_it_about_general_health(question):
