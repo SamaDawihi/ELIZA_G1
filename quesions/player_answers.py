@@ -17,15 +17,15 @@ def get_player_questions(question):
         return "if you want to know about hilal players they are: \n" + get_all_players()
 
 def get_all_players():
-    formatted_current_players = "\n".join([f"{p['name']} - {p['position']} (#{p['number']})" for p in current_players])
-    formatted_former_players = "\n".join([f"{p['name']} - {p['position']} (#{p['number']})" for p in former_players])
+    formatted_current_players = "\n".join([f"{p['first_name']} - {p['position']} (#{p['number']})" for p in current_players])
+    formatted_former_players = "\n".join([f"{p['first_name']} - {p['position']} (#{p['number']})" for p in former_players])
     return f"Current Players:\n{formatted_current_players}\n\nFormer Players:\n{formatted_former_players}"
 
 def get_player_by_name(question):
     all_players = current_players + former_players
     for player in all_players:
-        if player["name"].lower() in question:
-            return f"Name: {player['name']}\nPosition: {player['position']}\nNumber: {player['number']}"
+        if player["first_name"].lower() in question:
+            return f"first_name: {player['first_name']}\nPosition: {player['position']}\nNumber: {player['number']}"
     return "I couldn't find any player with that name."
 
 def get_players_by_position(question):
@@ -35,7 +35,7 @@ def get_players_by_position(question):
         if position in question:
             players = [p for p in all_players if position in p["position"].lower()]
             if players:
-                return "\n".join([f"{p['name']} - #{p['number']}" for p in players])
+                return "\n".join([f"{p['first_name']} - #{p['number']}" for p in players])
             return f"No players found in the position: {position}."
     return "I couldn't understand the position you're asking about."
 
@@ -46,5 +46,5 @@ def get_player_by_number(question):
     all_players = current_players + former_players
     for player in all_players:
         if str(player["number"]) in question:
-            return f"Player with number {player['number']}:\nName: {player['name']}\nPosition: {player['position']}"
+            return f"Player with number {player['number']}:\nName: {player['first_name']}\nPosition: {player['position']}"
     return "I couldn't find any player with that number."
