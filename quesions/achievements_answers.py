@@ -21,14 +21,32 @@ def get_achievements_info(question):
 
     # Check for the number of times an achievement occurred
     if "many" in question or "how many" in question:
-        if "spl" in question or "saudi pro league" in question:
-            return next(ach['count'] for ach in achievements if "Saudi Pro League" in ach['title'])
-        elif "king cup" in question:
-            return next(ach['count'] for ach in achievements if "King Cup" in ach['title'])
-        elif "crown prince cup" in question:
-            return next(ach['count'] for ach in achievements if "Saudi Crown Prince Cup" in ach['title'])
-        elif "champions league" in question or "acl" in question:
-            return next(ach['count'] for ach in achievements if "AFC Champions League" in ach['title'])
+        if "spl" in question or "saudi pro league" or "saudi professional league" or "league" in question:
+            return f"Alhilal won the SPL {next(ach['count'] for ach in achievements if 'Saudi Professional League' in ach['title'])} times! GOAT🐐"
+        elif "roshen" in question:
+            return "Alhilal won the Roshn cup last year, and even Alnassr with Ronaldo couldn't help them. Hahahahaha!"
+        elif "king" in question:
+            return f"We won the King's Cup {next(ach['count'] for ach in achievements if "King Cup" in ach['title'])} times! Can you imagine? Thank god for alhilal"
+        elif "crown prince" in question:
+            return f"We got this cup {next(ach['count'] for ach in achievements if "Saudi Crown Prince Cup" in ach['title'])} times"
+        elif "asian" in question or "acl" or "afc" in question:
+            return f"We got this cup {next(ach['count'] for ach in achievements if "AFC Champions League" in ach['title'])} times!"
+        elif "cup" or "cups" in question:
+            return f"ًWe have {next(ach['count'] for ach in achievements if "Cups" in ach['title'])} cups! Alhilal GOAT🐐!"
+        elif "federation" in question:
+            return "We got this cup 6 times I think or may be more 😎"
+        elif "gulf" in question:
+            return "I rembemr that I have read we got it twice! but I don't have more information about it"
+        elif "arabian" in question:
+            return "I rembemr that I have read we got it 4 times! but I don't have more information about it"
+        elif "founders" or "founder" in question: 
+            return "We got the founders cup at 2000" 
+        elif "egyptian" in question:
+            return "We got the Saudi-Egyptian Super Cup at 2001"
+        elif "super" in question:
+            return "We got the Saudi Super Cup 5 times!"
+        
+        
 
     # Check for specific year-related questions
     elif "year" in question or "when" in question:
