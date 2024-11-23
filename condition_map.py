@@ -1,5 +1,3 @@
-from break_text import remove_plural
-
 def question_is_about(question):
     single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could']
     

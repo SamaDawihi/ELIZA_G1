@@ -1,9 +1,10 @@
 from hilal_data import *
 
-def get_achievements_info(question):
+from hilal_data import *
 
-    # Define shortcuts for achievements
-    shortcuts = {
+def get_achievements_info(question):
+    # Keywords related to achievements
+    achievement_keywords = {
         "spl": "Saudi Pro League",
         "acl": "AFC Champions League",
         "king cup": "King Cup",
@@ -13,19 +14,18 @@ def get_achievements_info(question):
         "unbeaten season": "Unbeaten Season in Saudi Pro League"
     }
 
-    # Replace shortcuts in the question with full achievement names
-    for shortcut, full_name in shortcuts.items():
-        question = question.replace(shortcut, full_name)
+    # Convert the question list to lowercase to make comparison case-insensitive
+    question = [word.lower() for word in question]
 
     # Check for the number of times an achievement occurred
     if "many" in question or "how many" in question:
-        if "saudi pro league" in question:
+        if "spl" in question or "saudi pro league" in question:
             return next(ach['count'] for ach in achievements if "Saudi Pro League" in ach['title'])
         elif "king cup" in question:
             return next(ach['count'] for ach in achievements if "King Cup" in ach['title'])
         elif "crown prince cup" in question:
             return next(ach['count'] for ach in achievements if "Saudi Crown Prince Cup" in ach['title'])
-        elif "champions league" in question:
+        elif "champions league" in question or "acl" in question:
             return next(ach['count'] for ach in achievements if "AFC Champions League" in ach['title'])
 
     # Check for specific year-related questions
