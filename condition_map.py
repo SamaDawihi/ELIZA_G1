@@ -78,7 +78,8 @@ def is_it_about_general_health(question):
     return any(all(word in question for word in phrase) for phrase in keywords)
 
 def is_it_about_players(question):
-    #  who plays as defender
+    question = [search(q) for q in question]
+    
     keywords = [
         "position", "player", "players", "defender", "midfielder", "forward", "goalkeeper", "wing"
     ]
@@ -121,7 +122,8 @@ def is_it_about_achievements(question):
 
 # general information
 def is_it_about_other_sports_answers(question):
-    if sport_exists_in_list(question) and 'hilal' in question:
+    synonym_question = [search(q) for q in question]
+    if sport_exists_in_list(question) and 'hilal' in synonym_question:
         return True
     keywords = [
         "othersports", "othergames"
