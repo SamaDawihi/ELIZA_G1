@@ -11,7 +11,7 @@ current_players = [
     {"first_name": "Malcom", "last_name": "", "position": "Forward", "number": 77}, #malcome
     {"first_name": "Marcos", "last_name": "Leonardo", "position": "Forward", "number": 11}, # leo
     {"first_name": "Neymar", "last_name": "", "position": "Forward", "number": 10},
-    {"first_name": "Rúben", "last_name": "Neves", "position": "Midfielder", "number": 8}, # roben
+    {"first_name": "Ruben", "last_name": "Neves", "position": "Midfielder", "number": 8}, # roben
     {"first_name": "Sergej", "last_name": "MilinkovicSavic", "position": "Midfielder", "number": 22}, #Savic
     {"first_name": "Mohammed", "last_name": "Kanno", "position": "Midfielder", "number": 28},
     {"first_name": "Nasser", "last_name": "AlDawsari", "position": "Midfielder", "number": 16}, #kano
