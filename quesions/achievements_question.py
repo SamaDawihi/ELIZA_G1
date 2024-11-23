@@ -1,8 +1,6 @@
 from hilal_data import *
 
 def get_achievements_info(question):
-    # Normalize the question by converting to lowercase to make it case-insensitive
-    question = question.lower()
 
     # Define shortcuts for achievements
     shortcuts = {

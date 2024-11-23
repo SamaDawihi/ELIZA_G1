@@ -47,6 +47,38 @@ def is_it_about_general_health(question):
 def is_it_about_players(question):
     return "player" in question or "players" in question
 
+
+# achievements
+def is_it_about_achievements(question):
+    keywords = [
+        # General achievement-related terms
+        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal",
+        
+        # Specific competition-related terms
+        "pro league", "saudi pro league", "spl", "king cup", "crown prince cup", "super cup", "champions league",
+        "afc champions league", "fifa club world cup", "unbeaten season", "semi-finals", "runners-up",
+        
+        # General terms related to awards or records
+        "record", "season", "goal", "goals", "scored", "conceded", "goals scored", "goals conceded",
+        
+        # Variations of terms indicating number of times
+        "how many", "number of times", "count", "times", "repeated", "occurred", "won", "won the", "times won",
+        
+        # Terms for year-related questions
+        "year", "when", "date", "in", "last", "recent",
+        
+        # Specific achievements
+        "finals", "semi-final", "qualification", "runner-up", "runner up", "placed", "position"
+    ]
+
+    # Check if any keyword exists in the question
+    for keyword in keywords:
+        if keyword in question:
+            return True
+    return False
+
+
+'''
 # achievements
 def is_it_about_achievements(question):
     keywords = [
@@ -81,7 +113,7 @@ def is_it_about_world_achievements(question):
     keywords = [
         "world cup", "silver", "second", "real madrid"
     ]
-    return any(keyword in question for keyword in keywords)
+    return any(keyword in question for keyword in keywords)'''
 
 # general information
 def is_it_about_general_info(question):
