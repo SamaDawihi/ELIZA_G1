@@ -70,9 +70,9 @@ def get_all_other_sports_answer_randomly():
     global all_other_sports_answer_counter 
     # TODO complete the list
     answer_list = [
-        f"1 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
-        f"2 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
-        f"3 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
     ]
     count = all_other_sports_answer_counter
     all_other_sports_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
