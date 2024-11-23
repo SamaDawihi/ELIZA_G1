@@ -66,6 +66,8 @@ def analyze_question(question):
     # Default response if no known conditions are met
     return last_escape[update_counter("last_escape")]
 
+
+# This method is to show the porevious questions is the chat
 def show():
     st.title("Mohammed")
     st.write("I am Mohammed, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
