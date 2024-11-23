@@ -1,5 +1,5 @@
 from hilal_data import *
-from escaperforClup import *
+from escaper import *
 synonyms = {
     "founded": ["started", "established", "created"],
     "biggest win": ["largest victory", "best win", "highest score"],
@@ -20,7 +20,6 @@ synonyms = {
     "iconic match": ["memorable game", "historic match"],
     "longest winning streak": ["longest run", "consecutive wins"]
 }
-print("hilal")
 # دالة عكسية لتسهيل البحث عن المرادفات
 expanded_terms = {term: key for key, values in synonyms.items() for term in values}
 expanded_terms.update({key: key for key in synonyms.keys()})  # إضافة الكلمات الأساسية نفسها

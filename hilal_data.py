@@ -14,7 +14,7 @@ current_players = [
     {"first_name": "Ruben", "last_name": "Neves", "position": "Midfielder", "number": 8}, # roben
     {"first_name": "Sergej", "last_name": "MilinkovicSavic", "position": "Midfielder", "number": 22}, #Savic
     {"first_name": "Mohammed", "last_name": "Kanno", "position": "Midfielder", "number": 28},
-    {"first_name": "Nasser", "last_name": "AlDawsari", "position": "Midfielder", "number": 16}, #kano
+    {"first_name": "Nasser", "last_name": "AlDawsari", "position": "Midfielder", "number": 16}, 
     {"first_name": "Khalid", "last_name": "AlGhannam", "position": "Midfielder", "number": 7},
     {"first_name": "Joao", "last_name": "Cancelo", "position": "Defender", "number": 20},
     {"first_name": "Kalidou", "last_name": "Koulibaly", "position": "Defender", "number": 3}, #kolibaly
@@ -58,22 +58,23 @@ achievements = [
 
 
 alhilal_other_sports_info = [
-    {"sport": "Volleyball", "description": "A game where the ball is sent over the net, aiming to land it in the opponent's court."},
-    {"sport": "Basketball", "description": "Each team tries to score points by shooting the ball into the opponent's hoop."},
-    {"sport": "Taekwondo", "description": "A popular martial art focusing on fast kicks, punches, and strong defensive moves."},
-    {"sport": "Karate", "description": "A combat sport based on precise punches and kicks, with the goal of scoring points."},
-    {"sport": "Squash", "description": "A racket sport where the ball is hit against the wall to make it hard for the opponent to return."},
-    {"sport": "Tennis", "description": "A sport where the ball is hit with a racket over a net, aiming to score points."},
-    {"sport": "Athletics", "description": "Includes running, jumping, and throwing events and is one of the oldest global sports."},
-    {"sport": "Handball", "description": "Two teams pass the ball and try to score goals in the opponent's net."},
-    {"sport": "Table Tennis", "description": " players hit a small ball on a table using paddles."},
-    {"sport": "Swimming", "description": "A water sport featuring styles like freestyle, backstroke, breaststroke, and butterfly."},
-    {"sport": "Judo", "description": "A martial art focused on grappling and throwing the opponent to the ground."},
-    {"sport": "Badminton", "description": "A light game where players hit the shuttlecock with a racket, aiming to land it on the opponent's side."},
-    {"sport": "Cycling", "description": "Races conducted on roads, tracks, or trails, requiring endurance and strength."},
-    {"sport": "Esports", "description": "Competitive video gaming in various genres, played individually or in teams."},
-    {"sport": "Weightlifting", "description": "A strength sport where athletes lift heavy weights in specific formats to compete."}
+    {"sport": "Volleyball", "description": "A game where the ball is sent over the net, aiming to land it in the opponent's court.", "achievement": "14 Saudi Volleyball League titles"},
+    {"sport": "Basketball", "description": "Each team tries to score points by shooting the ball into the opponent's hoop.", "achievement": "Saudi Basketball Championship runners-up"},
+    {"sport": "Taekwondo", "description": "A popular martial art focusing on fast kicks, punches, and strong defensive moves.", "achievement": "National Taekwondo Championship gold medalists"},
+    {"sport": "Karate", "description": "A combat sport based on precise punches and kicks, with the goal of scoring points.", "achievement": "Saudi National Karate Champions"},
+    {"sport": "Squash", "description": "A racket sport where the ball is hit against the wall to make it hard for the opponent to return.", "achievement": "Qualified for Saudi Squash Championships"},
+    {"sport": "Tennis", "description": "A sport where the ball is hit with a racket over a net, aiming to score points.", "achievement": "National Tennis League Champions"},
+    {"sport": "Athletics", "description": "Includes running, jumping, and throwing events and is one of the oldest global sports.", "achievement": "10 gold medals in Saudi Athletics Meet"},
+    {"sport": "Handball", "description": "Two teams pass the ball and try to score goals in the opponent's net.", "achievement": "Saudi Handball League champions, GCC Handball Championship winners"},
+    {"sport": "Table Tennis", "description": "Players hit a small ball on a table using paddles.", "achievement": "National Table Tennis Champions"},
+    {"sport": "Swimming", "description": "A water sport featuring styles like freestyle, backstroke, breaststroke, and butterfly.", "achievement": "Saudi National Swimming Championship winners"},
+    {"sport": "Judo", "description": "A martial art focused on grappling and throwing the opponent to the ground.", "achievement": "Gold medal in Saudi Judo Championship"},
+    {"sport": "Badminton", "description": "A light game where players hit the shuttlecock with a racket, aiming to land it on the opponent's side.", "achievement": "Saudi Badminton League winners"},
+    {"sport": "Cycling", "description": "Races conducted on roads, tracks, or trails, requiring endurance and strength.", "achievement": "Winners of Saudi Cycling Championship"},
+    {"sport": "Esports", "description": "Competitive video gaming in various genres, played individually or in teams.", "achievement": "GCC Esports Tournament champions, Saudi Esports League finalists"},
+    {"sport": "Weightlifting", "description": "A strength sport where athletes lift heavy weights in specific formats to compete.", "achievement": "National Weightlifting Championship gold medalists"}
 ]
+
 
 
 
