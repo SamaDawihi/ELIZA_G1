@@ -34,6 +34,7 @@ synonym = {
     'goalkeeper':['goalkeeper', 'gk'],
     'wing':['wing',],
     'midfielder':['midfildr','midfilder', 'center'],
+    'achievement': ["success", "successes", 'reward']
     }
 
 
