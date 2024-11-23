@@ -2,7 +2,7 @@ from quesions.escape_answers import *
 from quesions.hilal_info_answers import *
 from quesions.player_answers import *
 from quesions.achievements_answers import *
-from quesions.other_games_answers import *
+from quesions.other_sports_answers import *
 from quesions.welcome_answers import *
 import streamlit as st
 from hilal_data import *
@@ -20,60 +20,62 @@ def analyze_question(question):
     # question = [spell.correction(word) for word in question]
     print(question)
 
-    # check if question is in arabic
-    if is_it_in_arabic(question):
-        return update_counter("arabic_escape")
-    
-    # Hi, How are You
-    if is_it_about_welcoming(question) and is_it_about_general_health(question):
-        return get_welcome(question) + ", " + get_general_health_questions()
+    return get_other_sports_answers(question)
 
-    # Hi, Hello, ...
-    if is_it_about_welcoming(question):
-        return get_welcome(question)
+    # # check if question is in arabic
+    # if is_it_in_arabic(question):
+    #     return update_counter("arabic_escape")
     
-    # How are You
-    if is_it_about_general_health(question):
-        return get_general_health_questions()
-    
-    if is_it_about_farewell(question):
-        return 'Bye'
-    
-    # if just 2 words. ex: "I like"
-    if len(question) < 3 :
-            return "what?"
-    
-    # Not a question, Does not have [what, when, ...]
-    if question_is_about(question) == 'not a question':        
-        return update_counter("not_question")
-    
-    # If it include escape topics. ex [nassr, injuries]
-    if is_it_about_escape(question):
-        return get_escape_answers(question)
+    # # Hi, How are You
+    # if is_it_about_welcoming(question) and is_it_about_general_health(question):
+    #     return get_welcome(question) + ", " + get_general_health_questions()
 
-    # TODO 
-    # if is_it_yesno():
-    #     return get_yesno_answers()
-
-    # Check if the question is about players
-    if is_it_about_players(question): 
-        return get_player_questions(question)
+    # # Hi, Hello, ...
+    # if is_it_about_welcoming(question):
+    #     return get_welcome(question)
     
-    # Check if the question is about achievements
-    if is_it_about_achievements(question):
-        return get_achievements_info(question) #Salwa
-
-    # Check if the question is about general information
-    if is_it_about_general_info(question):
-        return get_general_questions(question)
-
-
-    # Check if the question satisfies the club info condition
-    if is_it_about_club(question):
-        return get_club_answers(question)
+    # # How are You
+    # if is_it_about_general_health(question):
+    #     return get_general_health_questions()
     
-    # Default response if no known conditions are met
-    return update_counter("last_escape")
+    # if is_it_about_farewell(question):
+    #     return 'Bye'
+    
+    # # if just 2 words. ex: "I like"
+    # if len(question) < 3 :
+    #         return "what?"
+    
+    # # Not a question, Does not have [what, when, ...]
+    # if question_is_about(question) == 'not a question':        
+    #     return update_counter("not_question")
+    
+    # # If it include escape topics. ex [nassr, injuries]
+    # if is_it_about_escape(question):
+    #     return get_escape_answers(question)
+
+    # # TODO 
+    # # if is_it_yesno():
+    # #     return get_yesno_answers()
+
+    # # Check if the question is about players
+    # if is_it_about_players(question): 
+    #     return get_player_questions(question)
+    
+    # # Check if the question is about achievements
+    # if is_it_about_achievements(question):
+    #     return get_achievements_info(question) #Salwa
+
+    # # Check if the question is about general information
+    # if is_it_about_other_sports_answers(question):
+    #     return get_other_sports_answers(question)
+
+
+    # # Check if the question satisfies the club info condition
+    # if is_it_about_club(question):
+    #     return get_club_answers(question)
+    
+    # # Default response if no known conditions are met
+    # return update_counter("last_escape")
 
 
 def show():

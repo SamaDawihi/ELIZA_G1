@@ -12,7 +12,6 @@ synonym = {
     # TODO complete the list
     'mohammed': ['mohamed'],
     'Kanno': ['kano']
-
     }
 
 

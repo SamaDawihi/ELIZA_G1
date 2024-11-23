@@ -1,28 +1,24 @@
 from hilal_data import *
+def get_other_sports_answers(question):
+    answer = get_different_between_sports(question)
+    if answer:
+        return answer
+    
+    sport = sport_exists_in_list(question)
+    if sport:
+        return get_sport_description(sport)
+    
+    return get_all_other_sports_answer_randomly()
+    
+def sport_exists_in_list(question):
+    for sport_info in alhilal_other_sports_info:
+        sport_name = sport_info['sport']
+        if sport_name.lower() in question:
+            return sport_info
+    return None
 
-def get_sports(question):
-
-
-    if ["many","sports"] or ["many","othersport",] in question :
-
-        for sport in alhilal_other_sports_info :
-            all_sports = [sport['sport']]
-            formatted_sports = ", ".join(all_sports[:3])  
-        
-            return(f"I remeber there are {formatted_sports}.")
-        
-        return ("actually i don't know anything about this sport.")
-
-def get_sports_description(question):
-    if [[ 'describe', sport['sport']] for sport in alhilal_other_sports_info] or [[sport['sport'], 'rule'] for sport in alhilal_other_sports_info] or [[sport['sport'], 'rules'] for sport in alhilal_other_sports_info] or [[ 'what',"is", sport['sport']] for sport in alhilal_other_sports_info] in question :
-
-        for sport in alhilal_other_sports_info:
-            if sport["sport"].lower() in [word.lower() for word in question]:
-                # Return the description of the matched sport
-                print(f"I think {sport['description']}.")
-                return
-
-        return("actually i don't know anything about this sport.")
+def get_sport_description(sport):
+        return f"I think {sport['description']}."
     
 def get_different_between_sports(question):
     if [[sport['sport']for sport in alhilal_other_sports_info ] and "different" in question] :
@@ -44,13 +40,30 @@ def get_different_between_sports(question):
             else:
                 return "The two sports are the same. Please mention two different sports to compare."
         else:
-            return "Could not find two different sports to compare."
+            return ''
     
+def get_all_other_sports(counter):
+    counter *= 3 
+    if counter >= len(current_players):
+        counter = 0
+    last = counter + 3 
+
+    # Format the current slice of players
+    other_sports = ", ".join(
+        [f"{s['sport']}" for s in alhilal_other_sports_info[counter:last]]
+    )
+    return other_sports
 
 
-
-   
-
-
-
-   
+all_other_sports_answer_counter = 0
+def get_all_other_sports_answer_randomly():
+    global all_other_sports_answer_counter 
+    # TODO complete the list
+    answer_list = [
+        f"1 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f"2 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f"3 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
+    ]
+    count = all_other_sports_answer_counter
+    all_other_sports_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
+    return answer_list[count]

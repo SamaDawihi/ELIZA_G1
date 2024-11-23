@@ -55,7 +55,6 @@ achievements = [
 
 
 alhilal_other_sports_info = [
-    
     {"sport": "Volleyball", "description": "A game where the ball is sent over the net, aiming to land it in the opponent's court."},
     {"sport": "Basketball", "description": "Each team tries to score points by shooting the ball into the opponent's hoop."},
     {"sport": "Taekwondo", "description": "A popular martial art focusing on fast kicks, punches, and strong defensive moves."},
@@ -71,8 +70,6 @@ alhilal_other_sports_info = [
     {"sport": "Cycling", "description": "Races conducted on roads, tracks, or trails, requiring endurance and strength."},
     {"sport": "Esports", "description": "Competitive video gaming in various genres, played individually or in teams."},
     {"sport": "Weightlifting", "description": "A strength sport where athletes lift heavy weights in specific formats to compete."}
-    
-
 ]
 
 

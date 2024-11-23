@@ -1,4 +1,4 @@
-from break_text import remove_plural
+from quesions.other_sports_answers import sport_exists_in_list
 from quesions.player_answers import get_player_in_question
 from synonym import search
 
@@ -120,8 +120,13 @@ def is_it_about_world_achievements(question):
     return any(keyword in question for keyword in keywords)
 
 # general information
-def is_it_about_general_info(question):
-    return "general" in question
+def is_it_about_other_sports_answers(question):
+    if sport_exists_in_list(question) and 'hilal' in question:
+        return True
+    keywords = [
+        "othersports", "othergames"
+    ]
+    return any(keyword in question for keyword in keywords)
 
 # club information
 def is_it_about_club(question):
