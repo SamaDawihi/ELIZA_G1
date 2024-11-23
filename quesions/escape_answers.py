@@ -17,3 +17,11 @@ def get_escape_answers(question):
     if is_it_about_other_teams(question):
         return update_counter("other_teams_escape")
     return "I dont want to talk about this, leave if you don't have other questions"
+
+def get_yesno_answers(question):
+    if question[0] in ['can', 'could', 'may', 'would']:
+        return f'yes I {question[0]}'
+    return " I am not sure"
+
+def get_other_matches_answers(question):
+    return update_counter('matches_escape')

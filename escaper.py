@@ -92,7 +92,14 @@ escapers = {
         'list': [
         "I cant hear you",
         ],
-        'counter': 0}
+        'counter': 0},
+    'matches_escape': {
+        'list': [
+        "I don't realy remeber",
+        "lately work keeps me busy from keeping up to date with matches",
+        "considering we are talking about hilal, all I do care about is that he wins",
+        ],
+        'counter': 0},
 }
 
 
