@@ -1,6 +1,5 @@
 import streamlit as st
 
-# إعداد الصفحة
 st.set_page_config(
     page_title="Alhilal Club",
     page_icon="⚽",
@@ -8,14 +7,15 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
-# CSS لتنسيق النصوص
 st.markdown(
     """
     <style>
     body {
-        background-color: #1e90ff;
+       background-image: url('pages\\backg.jpg');  
+        background-size: cover;
         color: white;
         font-family: 'Arial', sans-serif;
+
     }
     .title {
         font-size: 1.4em;
