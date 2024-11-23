@@ -1,5 +1,5 @@
 from hilal_data import *
-from escaperforClup import *
+from escaper import *
 synonyms = {
     "founded": ["started", "established", "created"],
     "biggest win": ["largest victory", "best win", "highest score"],
