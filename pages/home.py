@@ -1,23 +1,12 @@
 import streamlit as st
 
-#def show():
-    
- #   st.title("Welcome")
-  #  st.write("I am Mohammed, chat with me to get to know Alhilal")
-
-#show()
-import streamlit as st
-
-from pages import chat
-
-# إعدادات الصفحة
 st.set_page_config(
     page_title="Blue Home Page",
     page_icon="🌟",
     layout="centered"
 )
 
-# إضافة الخلفية الزرقاء باستخدام CSS
+# CSS
 st.markdown(
     """
     <style>
@@ -39,37 +28,20 @@ st.markdown(
         font-size: 1.5em;
         margin-bottom: 30px;
     }
-    .button-container {
-        margin-top: 30px;
-    }
-    .stButton > button {
-        background-color: white;
-        color: #1e90ff;
-        font-size: 1.2em;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-    .stButton > button:hover {
-        background-color: #104e8b;
-        color: white;
-    }
     </style>
     """,
     unsafe_allow_html=True
-    #
 )
 
-# محتوى الصفحة
+col1, col2 = st.columns([1,2], gap= 'medium')
+
 st.markdown("<div class='main'>", unsafe_allow_html=True)
+with col1:
+    st.image("pages\\abu_rakan.png")
+with col2:
+    st.markdown("<div class='title'>Welcome to Alhilal Club 🌟</div>", unsafe_allow_html=True)
+    st.markdown("<div class='description'>I am Mohammed, chat with me to get to know Alhilal</div>", unsafe_allow_html=True)
 
-st.markdown("<div class='title'>Welcome to Alhilal Club 🌟</div>", unsafe_allow_html=True)
-st.markdown("<div class='description'>I am Mohammed, chat with me to get to know Alhilal</div>", unsafe_allow_html=True)
-
-#if st.button("StartChat"):
- #   st.session_state['page'] = 'chat'
-  #  st.experimental_rerun()
-           
+st.write("continue here")           
         
 st.markdown("</div>", unsafe_allow_html=True)
