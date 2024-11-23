@@ -91,8 +91,8 @@ def analyze_question(question):
 
 # This method is to show the porevious questions is the chat
 def show():
-    st.title("Abo Rakan")
-    st.write("I am Abo Rakan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
+    st.title("Abu Rakan")
+    st.write("I am Abu Rakan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
 
     # Initialize or persist chat history
     if 'questions' not in st.session_state:
@@ -106,11 +106,11 @@ def show():
         with st.chat_message("YOU"):
             st.write(question)
         # Display assistant messages
-        with st.chat_message("Abo Rakan"):
+        with st.chat_message("Abu Rakan"):
             st.write(response)
 
     # Capture new user input
-    question = st.chat_input("chat with Abo Rakan")
+    question = st.chat_input("chat with Abu Rakan")
     if question:
         # Add the question to session state
         st.session_state['questions'].append(question)
@@ -121,7 +121,7 @@ def show():
 
         time.sleep(2)
         
-        with st.chat_message("Abo Rakan"):
+        with st.chat_message("Abu Rakan"):
             placeholder = st.empty()
             placeholder.write(". ")
             time.sleep(1)

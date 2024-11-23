@@ -11,11 +11,9 @@ st.markdown(
     """
     <style>
     body {
-       background-image: url('pages\\backg.jpg');  
         background-size: cover;
         color: white;
         font-family: 'Arial', sans-serif;
-
     }
     .title {
         font-size: 1.4em;
@@ -35,7 +33,7 @@ st.markdown(
 
 col1, col2 = st.columns([1, 2], gap="medium")
 with col1:
-    st.image("pages\\abu_rakan2.png")
+    st.image("pages\\abu_rakan.png")
 with col2:
     st.markdown("<div class='title'>Chat with Al-Hilal Big Fan Abu Rakan ⚽🌟</div>", unsafe_allow_html=True)
     st.markdown(
