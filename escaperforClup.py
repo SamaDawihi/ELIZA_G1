@@ -73,8 +73,8 @@ escaper_forClup = {
 
     'stadium': {
         'list': [
-            "The Kingdom Arena, officially known as King Fahd International Stadium, is Al-Hilal's home ground.",
-            "Al-Hilal hosts its matches at the iconic Kingdom Arena (King Fahd International Stadium).",
+            "The Kingdom Arena, officially known as Al-Hilal's home ground.",
+            "Al-Hilal hosts its matches at the iconic Kingdom Arena .",
             "Welcome to the Kingdom Arena—Al-Hilal's official stadium."
         ],
         'counter': 0
@@ -167,7 +167,7 @@ def get_unexpected_response(topic):
     """
     تقوم بإرجاع رد مناسب بناءً على الموضوع.
     """
-    category = scaper_forClup.get(topic)
+    category = escaper_forClup.get(topic)
     if not category:
         return "Invalid topic!"
 
@@ -178,6 +178,6 @@ def get_unexpected_response(topic):
         return "I don't konw "
 
     response = responses[counter]
-    scaper_forClup[topic]['counter'] = counter + 1 if counter < len(responses) - 1 else 0
+    escaper_forClup[topic]['counter'] = counter + 1 if counter < len(responses) - 1 else 0
 
     return response
