@@ -160,13 +160,27 @@ escaper_forClup = {
         ],
         'counter': 0
     },
-    # TO DO COMPLET
     'default_info': {
-        'list': [
-           " difault_info"
-        ],
-        'counter': 0
+    'list': [
+        "If you are asking me about Al Hilal, all I care about is that Hilal is the best team.",
+        "Al Hilal is not just a team; it's a legacy of champions!",
+        "When you think of greatness, think Al Hilal.",
+        "Al Hilal is the pride of its fans and a nightmare for its rivals.",
+        "What more can I say? Al Hilal is simply unstoppable!",
+        "Ask anyone, they'll tell you Al Hilal dominates in every sport.",
+        "There's no competition where Al Hilal doesn’t excel.",
+        "The stars align for Al Hilal; it’s written in the history books.",
+        "Why settle for less when you can cheer for the best? Al Hilal all the way!",
+        "Al Hilal stands for excellence, determination, and victory.",
+        "Winning isn’t everything, but for Al Hilal, it’s a tradition.",
+        "Some teams play for fun, but Al Hilal plays to make history.",
+        "Blue is the color of champions, and Al Hilal wears it with pride.",
+        "Al Hilal: Leading, inspiring, and always ahead of the game.",
+        "If trophies could talk, they’d call Al Hilal their home."
+    ],
+    'counter': 0
     }
+
 }
 
 # دالة تحديث العداد واختيار الإجابة
