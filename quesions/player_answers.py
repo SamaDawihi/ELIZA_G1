@@ -8,8 +8,8 @@ def get_player_questions(question):
         if is_it_about_player_by_position(question):  
             return get_players_by_position(question)
         else:
-            player = get_player_in_question(question)  # إذا كان السؤال عن مركز لاعب معين
-            if player != '':  # إذا تم العثور على اللاعب
+            player = get_player_in_question(question)  
+            if player != '':  
                 return get_player_position_by_name(player)
             return "I don't know his position"
     
@@ -18,26 +18,25 @@ def get_player_questions(question):
         if any(q.isdigit() for q in question):
             return get_player_by_number(question)
         
-        player = get_player_in_question(question)  # إذا كان السؤال عن مركز لاعب معين
-        if player != '':  # إذا تم العثور على اللاعب
+        player = get_player_in_question(question)  
+        if player != '': 
             return get_player_number_by_name(player)
 
-    # التحقق إذا كان السؤال عن لاعب معين
+
     player = get_player_in_question(question)
-    if player != '':  # إذا تم العثور على لاعب
+    if player != '':
         return get_player_by_name(question)
     
     if 'former' in question:
         return get_all_former_players_answer_randomly()
 
-    # في حال لم يتم التعرف على السؤال
     return get_all_players_answer_randomly()
 
 
 def get_player_by_name(question):
     all_players = current_players + former_players
-    player = get_player_in_question(question)  # نبحث عن اسم اللاعب في السؤال
-    if player != '':  # إذا تم العثور على اللاعب
+    player = get_player_in_question(question)  
+    if player != '':  
         return get_player_answer_randomly(player)
     return "I couldn't find any player with that name."
 
@@ -65,11 +64,10 @@ def get_player_by_number(question):
     all_players = current_players + former_players
     for player in all_players:
         if str(player["number"]) in question:
-            return f"{player['first_name']} {player['last_name']} plays with number {player["number"]}"
+            return f"{player['first_name']} {player['last_name']} plays with number {player['number']}"
     return "I dont realy know."
 
 def is_it_about_player_by_position(question):
-    # TODO add alternative to synonym
     keywords = ["defender", "midfielder", "forward", "goalkeeper", "wing"]
     return any(keyword in question for keyword in keywords)
 
@@ -86,12 +84,11 @@ def get_player_in_question(question):
 player_answer_counter = 0
 def get_player_answer_randomly(player):
     global player_answer_counter 
-    # TODO complete the list
     answer_list = [
         f"If you are asking me about {player['first_name']} {player['last_name']} he is the {player['position']} of hilal. I like him in that position",
         f"If you asking about {player['first_name']} {player['last_name']} his number is {player['number']}",        
-        f"{player['first_name']} {player['last_name']} is player of hilal with {player['number']} number",        
-        f"{player['first_name']} {player['last_name']} his position is {player['position']}",        
+        f" for example {player['first_name']} {player['last_name']} is player of hilal with {player['number']} number",        
+        f"{player['first_name']} {player['last_name']} his position is {player['position']}No one can dominate the field in that position like him. He’s simply unmatched",        
         f"{player['first_name']} {player['last_name']} is one of my favirate players",        
     ]
     count = player_answer_counter
@@ -115,13 +112,13 @@ def get_all_players(counter):
 all_players_answer_counter = 0
 def get_all_players_answer_randomly():
     global all_players_answer_counter 
-    # TODO complete the list
-    answer_list = [
+    answer_list = [ 
+        f" To be honest, your question made me smile! It’s always a joy to talk about Hilal players. Right now, I can recall these legends:{get_all_players(all_players_answer_counter)}",        
+        f"Hilal has had so many greats, but the ones I can think of right now are:{get_all_players(all_players_answer_counter)}",        
+        f" I can think of right now are:{get_all_players(all_players_answer_counter)} This question made me pause and think deeply.", 
         f"If you are asking me about hilal players the best for me are: {get_all_players(all_players_answer_counter)}",
-        f"If you asking about {get_all_players(all_players_answer_counter)}",        
-        f"{get_all_players(all_players_answer_counter)}number",        
-        f"{get_all_players(all_players_answer_counter)}",        
-        f"{get_all_players(all_players_answer_counter)} is one of my favirate players",        
+        f"If you asking about hilal players : {get_all_players(all_players_answer_counter)}",        
+              
     ]
     count = all_players_answer_counter
     all_players_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
@@ -143,10 +140,13 @@ def get_former_players(counter):
 all_former_players_answer_counter = 0
 def get_all_former_players_answer_randomly():
     global all_former_players_answer_counter 
-    # TODO complete the list
     answer_list = [
-        f"If you are asking me about hilal players the best for me are: {get_former_players(all_former_players_answer_counter)}",
-        f"If you asking about {get_former_players(all_former_players_answer_counter)}",  
+        f"I love talking about Hilal former players! These are the ones I can recall at the moment: {get_former_players(all_former_players_answer_counter)}",
+        f"Honestly, the first names that come to mind are {get_former_players(all_former_players_answer_counter)}",
+        f"Your question is amazing! It gives me a chance to express my love for Hilal players. The ones that come to mind right now are: {get_former_players(all_former_players_answer_counter)}",
+        f"If you are asking me about hilal former players the best for me are: {get_former_players(all_former_players_answer_counter)}",
+        f"If you asking about hilal former players :{get_former_players(all_former_players_answer_counter)}",  
+        
     ]
     count = all_former_players_answer_counter
     all_former_players_answer_counter = count + 1 if count < len(answer_list) - 1 else 0

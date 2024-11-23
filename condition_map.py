@@ -1,9 +1,10 @@
+
 from quesions.other_sports_answers import sport_exists_in_list
 from quesions.player_answers import get_player_in_question
 from synonym import search
 
 def question_is_about(question):
-    single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could']
+    single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could', 'may', 'would']
     
     if "what" in question or "tell" in question:
         return "thing"
@@ -18,13 +19,16 @@ def question_is_about(question):
     if "how many" in question or "how much" in question:
         return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
-        return 'yes/no'
-    if '?' in question:
+        return 'yesno'
+    if question[len(question) - 1] == '?':
         return 'question'
     return 'not a question'
 
 def is_it_in_arabic(question):
     return sum(1 for char in ''.join(question) if '\u0600' <= char <= '\u06FF') > 0
+
+def check_question_mark(question: str):
+    return sum(1 for char in question if char == '?') > 0
 
 def is_it_about_welcoming(question):
     keywords = [
@@ -57,10 +61,14 @@ def is_it_about_other_teams(question):
     ]
     return any(keyword in question for keyword in keywords)
 
+def is_it_other_matches(question):
+    keywords = ['match', 'matches', 'vs', 'result']
+    return any(keyword in question for keyword in keywords)
 
 def is_it_about_general_health(question):
     keywords = [
         ["how", "are", "you"],
+        ["you", "ok"],
         ["how", "is", "it", "going"],
         ["how", "do", "you", "do"],
         ["are", "you", "okay"],
@@ -83,40 +91,32 @@ def is_it_about_players(question):
         return True
     return any(keyword in question for keyword in keywords)
 
+
 # achievements
 def is_it_about_achievements(question):
+    # TODO split words
+    question = ' '.join(question)
     keywords = [
-        "achievement", "cup",
-        "title", "champion", "trophy", "win"
+        # General achievement-related terms
+        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal",
+        
+        # Specific competition-related terms
+        "pro league", "saudi pro league", "spl", "king cup", "crown prince cup", "super cup", "champions league",
+        "afc champions league", "fifa club world cup", "unbeaten season", "semi-finals", "runners-up",
+        
+        # General terms related to awards or records
+        "record", "season", "goal", "goals", "scored", "conceded", "goals scored", "goals conceded",
+        
+        # Variations of terms indicating number of times
+        "how many", "number of times", "count", "times", "repeated", "occurred", "won", "won the", "times won",
+        
+        # Terms for year-related questions
+        "year", "when", "date", "in", "last", "recent",
+        
+        # Specific achievements
+        "finals", "semi-final", "qualification", "runner-up", "runner up", "placed", "position"
     ]
-    
-    # Remove plural forms if necessary
-    # modified_question = [remove_plural(q) for q in question]
-    
-    # Check if any keyword is present in the question
-    return any(keyword in question for keyword in keywords) or is_it_about_asia_achievements(question) or is_it_about_spl_achievements(question) or is_it_about_super_achievements(question) or is_it_about_world_achievements(question)
 
-def is_it_about_asia_achievements(question):
-    keywords = [
-        "champion", "league", "asian champion",
-        "afc champions league", 'afc'       
-    ]
-    return any(keyword in question for keyword in keywords)
-
-def is_it_about_spl_achievements(question):
-    keywords = [
-        "spl", "league", "saudi", "professional", "pro", 
-    ]
-    return any(keyword in question for keyword in keywords)
-
-def is_it_about_super_achievements(question):
-    keywords = ["super"]
-    return any(keyword in question for keyword in keywords)
-
-def is_it_about_world_achievements(question):
-    keywords = [
-        "world cup", "silver", "second", "madrid"
-    ]
     return any(keyword in question for keyword in keywords)
 
 # general information
@@ -130,10 +130,12 @@ def is_it_about_other_sports_answers(question):
 
 # club information
 def is_it_about_club(question):
-    return "club" in question or is_it_about_foundation(question)
+    question = [search(q) for q in question]
+    keywords = [
+        'hilal', 'club', 'team', 'it', 'founded', 
+    ]
+    return any(keyword in question for keyword in keywords)
 
-def is_it_about_foundation(question):
-    return 'founded' in question and question_is_about(question) == 'time'
 
 def is_it_about_farewell(question):
     keywords = [

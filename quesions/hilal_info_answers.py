@@ -1,4 +1,5 @@
 from hilal_data import *
+from escaperforClup import *
 synonyms = {
     "founded": ["started", "established", "created"],
     "biggest win": ["largest victory", "best win", "highest score"],
@@ -19,7 +20,7 @@ synonyms = {
     "iconic match": ["memorable game", "historic match"],
     "longest winning streak": ["longest run", "consecutive wins"]
 }
-
+print("hilal")
 # دالة عكسية لتسهيل البحث عن المرادفات
 expanded_terms = {term: key for key, values in synonyms.items() for term in values}
 expanded_terms.update({key: key for key in synonyms.keys()})  # إضافة الكلمات الأساسية نفسها
@@ -68,85 +69,73 @@ def get_club_answers(question):
                 return get_iconic_match()
             elif key == "longest winning streak":
                 return get_longest_winning_streak()
-    return get_hilal_answer_randomly()
+    return get_unexpected_response('default_info')
 
 # الدوال الخاصة بكل سؤال
 
 def get_club_founding_info():
-    return "Al-Hilal Club was founded on October 16, 1957."
+    return get_unexpected_response('founded')
 
 def get_biggest_win():
-    return "The biggest win for Al-Hilal was against Djibouti's Gendarmerie team with a score of 11-0."
+    return get_unexpected_response('biggest_win')
 
 def get_biggest_loss():
-    return "Al-Hilal's biggest loss was against Al-Taawoun with a score of 5-0."
+    return get_unexpected_response('biggest_loss')
 
 def get_first_championship():
-    return "Al-Hilal's first official championship was in 1962."
+    return get_unexpected_response('first_championship')
 
 def get_first_international_championship():
-    return "Al-Hilal's first official international championship was the Gulf Club Champions Cup in 1988."
+    return get_unexpected_response('first_international_championship')
+
 
 def get_first_president():
-    return "Al-Hilal's first president was Abdulrahman Bin Saeed."
+    return get_unexpected_response('first_president')
+
 
 def get_current_president():
-    return "The current president of Al-Hilal is Fahad Bin Nafel."
+    return get_unexpected_response('current_president')
+
 
 def get_first_name():
-    return "Al-Hilal's first name was 'Al-Olympi'."
+    return get_unexpected_response('first_name')
+
 
 def get_club_stadium():
-    return "Al-Hilal's official stadium is the King Fahd International Stadium (Kingdom Arena)."
+    return get_unexpected_response('stadium')
+
 
 def get_first_asian_championship():
-    return "Al-Hilal's first Asian championship was in 1991."
+    return get_unexpected_response('first_asian_championship')
+
 
 def get_club_nickname():
-    return "Al-Hilal is nicknamed 'The Leader' (Al-Zaeem) and is also referred to as 'The Asian Club of the Century' and 'The Blue Wave'."
+    return get_unexpected_response('nickname')
+
 
 def get_club_rival():
-    return "Al-Hilal's traditional rival is Al-Ittihad Club."
+    return get_unexpected_response('rival')
+
 
 def get_famous_coach():
-    return "The most famous coach in Al-Hilal's history is Mario Zagallo."
+    return get_unexpected_response('famous_coach')
+
 
 def get_famous_players():
-    return "Al-Hilal has had many legendary players, such as Sami Al-Jaber, Yasser Al-Qahtani, and Mohamed Al-Deayea."
+    return get_unexpected_response('famous_players')
+
 
 def get_famous_derby():
-    return "The most famous derby match for Al-Hilal is against their neighbor, Al-Nassr."
+    return get_unexpected_response('famous_derby')
+
 
 def get_famous_clasico():
-    return "Al-Hilal's most famous Clasico match is against their rival, Al-Ittihad, at the local level."
+    return get_unexpected_response('famous_clasico')
+
 
 def get_iconic_match():
-    return "Al-Hilal's most iconic match was against Japan's Urawa in the 2018 AFC Champions League final."
+    return get_unexpected_response('iconic_match')
+
 
 def get_longest_winning_streak():
-    return "Al-Hilal's longest winning streak was 24 consecutive victories."
-
-
-hilal_answer_counter = 0
-def get_hilal_answer_randomly():
-    global hilal_answer_counter 
-    # TODO complete the list
-    answer_list = [
-        "I don't know what are you talking about, but if you ask about hilal, I just can tell you it is the best team",
-        "Didn't I tell you it was in 1957"
-    ]
-    count = hilal_answer_counter
-    hilal_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
-    return answer_list[count]
-
-hilal_founded_answer_counter = 0
-def get_hilal_founded_answer_randomly():
-    global hilal_founded_answer_counter 
-    # TODO complete the list
-    answer_list = [
-        "Al-Hilal Club was founded on October 16, 1957.",
-        "Didn't I tell you it was in 1957"
-    ]
-    count = hilal_founded_answer_counter
-    hilal_founded_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
-    return answer_list[count]
+    return get_unexpected_response('longest_winning_streak')

@@ -8,22 +8,26 @@ import streamlit as st
 from hilal_data import *
 from escaper import *
 from condition_map import *
-# from spellchecker import SpellChecker
+import string
 
-# To check if there are mis spelled words
-# spell = SpellChecker()
 
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
-    question = question.lower().split()  # Convert the question to lowercase for easier matching
-    # question = [spell.correction(word) for word in question]
+    had_question_mark = check_question_mark(question)
+    question = question.translate(str.maketrans('', '', string.punctuation))
+    question = question.lower().strip().split()
+
+    # If it had question mark before removing puncutation add it to the list
+    if had_question_mark:
+        question.append('?')
     print(question)
 
 
     # check if question is in arabic
     if is_it_in_arabic(question):
         return update_counter("arabic_escape")
+
     
     # Hi, How are You
     if is_it_about_welcoming(question) and is_it_about_general_health(question):
@@ -52,21 +56,19 @@ def analyze_question(question):
     if is_it_about_escape(question):
         return get_escape_answers(question)
 
-    # TODO 
-    # if is_it_yesno():
-    #     return get_yesno_answers()
-
-    # TODO 
-    # if is_it_other_matches():
-    #     return get_other_matches_answers()
+    if is_it_other_matches(question):
+        return get_other_matches_answers(question)
 
     # Check if the question is about players
     if is_it_about_players(question): 
         return get_player_questions(question)
     
+
     # Check if the question is about achievements
     if is_it_about_achievements(question):
-        return get_achievements_info(question) #Salwa
+        answer = get_achievements_info(question)
+        if answer:
+            return answer
 
     # Check if the question is about general information
     if is_it_about_other_sports_answers(question):
@@ -77,10 +79,16 @@ def analyze_question(question):
     if is_it_about_club(question):
         return get_club_answers(question)
     
+    if question_is_about(question) == 'yesno':
+        return get_yesno_answers(question)
+    
     # Default response if no known conditions are met
     return update_counter("last_escape")
 
 
+
+
+# This method is to show the porevious questions is the chat
 def show():
     st.title("Mohammed")
     st.write("I am Mohammed, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
