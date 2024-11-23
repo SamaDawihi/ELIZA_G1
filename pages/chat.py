@@ -57,7 +57,7 @@ def analyze_question(question):
         return get_escape_answers(question)
 
     if question_is_about(question) == 'yesno':
-        return get_yesno_answers()
+        return get_yesno_answers(question)
 
     if is_it_other_matches(question):
         return get_other_matches_answers(question)

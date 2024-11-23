@@ -19,7 +19,7 @@ def question_is_about(question):
     if "how many" in question or "how much" in question:
         return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
-        return 'yes/no'
+        return 'yesno'
     if question[len(question) - 1] == '?':
         return 'question'
     return 'not a question'
@@ -94,6 +94,8 @@ def is_it_about_players(question):
 
 # achievements
 def is_it_about_achievements(question):
+    # TODO split words
+    question = ' '.join(question)
     keywords = [
         # General achievement-related terms
         "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal",
@@ -115,49 +117,7 @@ def is_it_about_achievements(question):
         "finals", "semi-final", "qualification", "runner-up", "runner up", "placed", "position"
     ]
 
-    # Check if any keyword exists in the question
-    for keyword in keywords:
-        if keyword in question:
-            return True
-    return False
-
-
-'''
-# achievements
-def is_it_about_achievements(question):
-    keywords = [
-        "achievement", "cup",
-        "title", "champion", "trophy", "win"
-    ]
-    
-    # Remove plural forms if necessary
-    # modified_question = [remove_plural(q) for q in question]
-    
-    # Check if any keyword is present in the question
-    return any(keyword in question for keyword in keywords) or is_it_about_asia_achievements(question) or is_it_about_spl_achievements(question) or is_it_about_super_achievements(question) or is_it_about_world_achievements(question)
-
-def is_it_about_asia_achievements(question):
-    keywords = [
-        "champion", "league", "asian champion",
-        "afc champions league", 'afc'       
-    ]
     return any(keyword in question for keyword in keywords)
-
-def is_it_about_spl_achievements(question):
-    keywords = [
-        "spl", "league", "saudi", "professional", "pro", 
-    ]
-    return any(keyword in question for keyword in keywords)
-
-def is_it_about_super_achievements(question):
-    keywords = ["super"]
-    return any(keyword in question for keyword in keywords)
-
-def is_it_about_world_achievements(question):
-    keywords = [
-        "world cup", "silver", "second", "madrid"
-    ]
-    return any(keyword in question for keyword in keywords)'''
 
 # general information
 def is_it_about_other_sports_answers(question):

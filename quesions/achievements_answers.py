@@ -3,6 +3,9 @@ from hilal_data import *
 from hilal_data import *
 
 def get_achievements_info(question):
+    question = ' '.join(question)
+    print("here")
+
     # Keywords related to achievements
     achievement_keywords = {
         "spl": "Saudi Pro League",
@@ -14,8 +17,6 @@ def get_achievements_info(question):
         "unbeaten season": "Unbeaten Season in Saudi Pro League"
     }
 
-    # Convert the question list to lowercase to make comparison case-insensitive
-    question = [word.lower() for word in question]
 
     # Check for the number of times an achievement occurred
     if "many" in question or "how many" in question:
@@ -30,9 +31,9 @@ def get_achievements_info(question):
 
     # Check for specific year-related questions
     elif "year" in question or "when" in question:
-        if "fifa club world cup" in question:
+        if "world" in question:
             return next(ach['year'] for ach in achievements if "FIFA Club World Cup Runners-Up" in ach['title'])
-        elif "saudi super cup" in question:
+        elif "super" in question:
             return next(ach['year'] for ach in achievements if "Saudi Super Cup" in ach['title'])
 
     # Check for specific season-related questions
@@ -48,9 +49,5 @@ def get_achievements_info(question):
                 "goals_conceded": next(ach['goals_conceded'] for ach in achievements if "Unbeaten Season in Saudi Pro League" in ach['title'])
             }
 
-    # If none of the above, return a default message
-    return "Sorry, I couldn't find the information you're looking for."
-
-
-#def get_achievements_condition(question):
-    #return "achievements" in question
+    # If none of the above, return a empty message
+    return ''
