@@ -25,8 +25,8 @@ def analyze_question(question):
 
 
     # check if question is in arabic
-    if is_it_in_arabic(question):
-        return update_counter("arabic_escape")
+    #if is_it_in_arabic(question):
+        #return update_counter("arabic_escape")
 
     
     # Hi, How are You
@@ -41,20 +41,20 @@ def analyze_question(question):
     #if is_it_about_general_health(question):
         #return get_general_health_questions()
     
-    if is_it_about_farewell(question):
-        return 'Bye'
+    #if is_it_about_farewell(question):
+        #return 'Bye'
     
     # if just 2 words. ex: "I like"
-    if len(question) < 3 :
-            return "what?"
+    #if len(question) < 3 :
+            #return "what?"
     
     # Not a question, Does not have [what, when, ...]
-    if question_is_about(question) == 'not a question':        
-        return update_counter("not_question")
+    #if question_is_about(question) == 'not a question':        
+        #return update_counter("not_question")
     
     # If it include escape topics. ex [nassr, injuries]
-    if is_it_about_escape(question):
-        return get_escape_answers(question)
+    #if is_it_about_escape(question):
+        #return get_escape_answers(question)
 
     # TODO 
     # if is_it_yesno():
@@ -65,8 +65,8 @@ def analyze_question(question):
     #     return get_other_matches_answers()
 
     # Check if the question is about players
-    if is_it_about_players(question): 
-        return get_player_questions(question)
+    #if is_it_about_players(question): 
+        #return get_player_questions(question)
     
 
     # Check if the question is about achievements
@@ -74,16 +74,16 @@ def analyze_question(question):
         return get_achievements_info(question) #Salwa
 
     # Check if the question is about general information
-    if is_it_about_other_sports_answers(question):
-        return get_other_sports_answers(question)
+    #if is_it_about_other_sports_answers(question):
+        #return get_other_sports_answers(question)
 
 
     # Check if the question satisfies the club info condition
-    if is_it_about_club(question):
-        return get_club_answers(question)
+    #if is_it_about_club(question):
+        #return get_club_answers(question)
     
     # Default response if no known conditions are met
-    return update_counter("last_escape")
+    #return update_counter("last_escape")
 
 
 
