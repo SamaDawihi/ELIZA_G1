@@ -3,7 +3,7 @@
 synonym = {
     "double": ["pair", "twin", "duplicate", "duo"], 
     "team": ["group", "crew", "squad", "unit"], 
-    'hilal': ['hilal', 'alhilal', 'al-hilal', 'helal', 'alhelal', 'al-helal',],
+    'hilal': ['hilal', 'alhilal', 'al-hilal', 'helal', 'alhelal', 'al-helal', 'hilals', 'alhilals', 'helals'],
     'nassr': ['naser', 'alnaser', 'al-naser', 'nassr', 'alnassr', 'al-nassr', 'nasser', 'alnasser', 'al-nasser'],
     'itihad': ['itihad', 'alitihad', 'al-itihad', 'ittihad', 'alittihad', 'al-ittihad'],
     'ahli': ['ahly', 'alahly', 'al-ahly', 'ahli', 'alahli', 'al-ahli',],
@@ -29,12 +29,11 @@ synonym = {
     'AlHarbi': ['harbi'],
     'AlYami': ['yami'],
     'alowais': ['owais'],
-
-
-
-
-
-
+    'defender':['dfender','dfendr', 'df'],
+    'forward':['foward','foward', 'attack', 'attacker'],
+    'goalkeeper':['goalkeeper', 'gk'],
+    'wing':['wing',],
+    'midfielder':['midfildr','midfilder', 'center'],
     }
 
 
