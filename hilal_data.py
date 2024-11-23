@@ -53,11 +53,7 @@ achievements = [
     {"title": "Founders Cup", "count": 1},
     {"title": "Saudi-Egyptian Super Cup", "count": 1},
     {"title": "Saudi Super Cup", "count": 5},
-    {"title": "Roshn Saudi League", "count": 1, "year": 2023/2024},
-
-    #{"title": "FIFA Club World Cup Runners-Up", "year": 2019},
-    #{"title": "Unbeaten Season in Saudi Pro League", "season": "2023–24", "goals_scored": 101, "goals_conceded": 23},
-    #{"title": "AFC Champions League Semi-Finals", "year": 2024},
+    {"title": "Roshn Saudi League", "count": 1, "year": 2024},
 ]
 
 
