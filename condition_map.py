@@ -4,7 +4,7 @@ from quesions.player_answers import get_player_in_question
 from synonym import search
 
 def question_is_about(question):
-    single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could']
+    single_answered = ['is', 'are', 'am', 'do', 'does', 'did', 'can', 'could', 'may', 'would']
     
     if "what" in question or "tell" in question:
         return "thing"
@@ -20,12 +20,15 @@ def question_is_about(question):
         return "quantity"
     if any(question[0] == keyword for keyword in single_answered):
         return 'yes/no'
-    if '?' in question:
+    if question[len(question) - 1] == '?':
         return 'question'
     return 'not a question'
 
 def is_it_in_arabic(question):
     return sum(1 for char in ''.join(question) if '\u0600' <= char <= '\u06FF') > 0
+
+def check_question_mark(question: str):
+    return sum(1 for char in question if char == '?') > 0
 
 def is_it_about_welcoming(question):
     keywords = [
@@ -58,10 +61,14 @@ def is_it_about_other_teams(question):
     ]
     return any(keyword in question for keyword in keywords)
 
+def is_it_other_matches(question):
+    keywords = ['match', 'matches', 'vs', 'result']
+    return any(keyword in question for keyword in keywords)
 
 def is_it_about_general_health(question):
     keywords = [
         ["how", "are", "you"],
+        ["you", "ok"],
         ["how", "is", "it", "going"],
         ["how", "do", "you", "do"],
         ["are", "you", "okay"],
@@ -163,10 +170,12 @@ def is_it_about_other_sports_answers(question):
 
 # club information
 def is_it_about_club(question):
-    return "club" in question or is_it_about_foundation(question)
+    question = [search(q) for q in question]
+    keywords = [
+        'hilal', 'club', 'team', 'it', 'founded', 
+    ]
+    return any(keyword in question for keyword in keywords)
 
-def is_it_about_foundation(question):
-    return 'founded' in question and question_is_about(question) == 'time'
 
 def is_it_about_farewell(question):
     keywords = [

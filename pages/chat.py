@@ -8,19 +8,19 @@ import streamlit as st
 from hilal_data import *
 from escaper import *
 from condition_map import *
-
-# from spellchecker import SpellChecker
-
-# To check if there are mis spelled words
-# spell = SpellChecker()
+import string
 
 
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
+    had_question_mark = check_question_mark(question)
+    question = question.translate(str.maketrans('', '', string.punctuation))
+    question = question.lower().strip().split()
 
-    question = question.lower().split()  # Convert the question to lowercase for easier matching
-    # question = [spell.correction(word) for word in question]
+    # If it had question mark before removing puncutation add it to the list
+    if had_question_mark:
+        question.append('?')
     print(question)
 
 
@@ -56,13 +56,11 @@ def analyze_question(question):
     #if is_it_about_escape(question):
         #return get_escape_answers(question)
 
-    # TODO 
-    # if is_it_yesno():
-    #     return get_yesno_answers()
+    if question_is_about(question) == 'yesno':
+        return get_yesno_answers()
 
-    # TODO 
-    # if is_it_other_matches():
-    #     return get_other_matches_answers()
+    if is_it_other_matches(question):
+        return get_other_matches_answers(question)
 
     # Check if the question is about players
     #if is_it_about_players(question): 
@@ -71,7 +69,7 @@ def analyze_question(question):
 
     # Check if the question is about achievements
     if is_it_about_achievements(question):
-        return get_achievements_info(question) #Salwa
+        return get_achievements_info(question)
 
     # Check if the question is about general information
     #if is_it_about_other_sports_answers(question):
