@@ -78,7 +78,8 @@ def is_it_about_general_health(question):
     return any(all(word in question for word in phrase) for phrase in keywords)
 
 def is_it_about_players(question):
-    #  who plays as defender
+    question = [search(q) for q in question]
+    
     keywords = [
         "position", "player", "players", "defender", "midfielder", "forward", "goalkeeper", "wing"
     ]

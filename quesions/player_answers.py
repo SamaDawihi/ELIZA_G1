@@ -3,8 +3,10 @@ from synonym import search
 
 def get_player_questions(question):
     question = [search(q) for q in question]
-    # about position
-    if "position" in question or ("who" in question and ("plays" in question or "play" in question) and "as" in question):
+    print(question)
+    
+    positions = ["defender", "midfielder", "forward", "goalkeeper", "wing"]
+    if "position" in question or ("who" in question and ("plays" in question or "play" in question) and "as" in question) or any(position in question for position in positions):
         if is_it_about_player_by_position(question):  
             return get_players_by_position(question)
         else:
@@ -34,7 +36,6 @@ def get_player_questions(question):
 
 
 def get_player_by_name(question):
-    all_players = current_players + former_players
     player = get_player_in_question(question)  
     if player != '':  
         return get_player_answer_randomly(player)
@@ -50,7 +51,7 @@ def get_players_by_position(question):
             players = [p for p in all_players if position == p["position"].lower()]
             print(players)
             if players:
-                return "\n".join([f"{p['first_name']} {p['last_name']} - #{p['number']}" for p in players])
+                return "who plays in " + position + " are: " + ", ".join([f"{p['first_name']} {p['last_name']}" for p in players])
             return f"No players found in the position: {position}."
     return "I couldn't understand the position you're asking about."
 
@@ -94,6 +95,8 @@ def get_player_answer_randomly(player):
     count = player_answer_counter
     player_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
     return answer_list[count]
+
+
 
 def get_all_players(counter):
     counter *= 3 

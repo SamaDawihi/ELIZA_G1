@@ -15,7 +15,7 @@ import string
 # Function to analyze text and respond to questions
 def analyze_question(question):
     had_question_mark = check_question_mark(question)
-    question = question.translate(str.maketrans('', '', string.punctuation))
+    question = question.translate(str.maketrans('', '', string.punctuation)) #TODO hilal's
     question = question.lower().strip().split()
 
     # If it had question mark before removing puncutation add it to the list
