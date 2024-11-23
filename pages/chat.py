@@ -1,3 +1,4 @@
+import time
 from quesions.escape_answers import *
 from quesions.hilal_info_answers import *
 from quesions.player_answers import *
@@ -15,7 +16,7 @@ import string
 # Function to analyze text and respond to questions
 def analyze_question(question):
     had_question_mark = check_question_mark(question)
-    question = question.translate(str.maketrans('', '', string.punctuation)) #TODO hilal's
+    question = question.translate(str.maketrans('', '', string.punctuation))
     question = question.lower().strip().split()
 
     # If it had question mark before removing puncutation add it to the list
@@ -105,11 +106,11 @@ def show():
         with st.chat_message("YOU"):
             st.write(question)
         # Display assistant messages
-        with st.chat_message("Mohammed"):
+        with st.chat_message("Abo Rakan"):
             st.write(response)
 
     # Capture new user input
-    question = st.chat_input("chat with Mohammed")
+    question = st.chat_input("chat with Abo Rakan")
     if question:
         # Add the question to session state
         st.session_state['questions'].append(question)
@@ -118,11 +119,24 @@ def show():
         with st.chat_message("YOU"):
             st.write(question)
 
-        # Generate a response
-        response = analyze_question(question)
-        st.session_state['responses'].append(response)
+        time.sleep(2)
         
-        with st.chat_message("Mohammed"):
-            st.write(response)
+        with st.chat_message("Abo Rakan"):
+            placeholder = st.empty()
+            placeholder.write(". ")
+            time.sleep(1)
+            placeholder.write(". . ")
+            time.sleep(1)
+            placeholder.write(". . .")
+            response = analyze_question(question)
+            time.sleep(1)
+            placeholder.write(". ")
+            time.sleep(1)
+            placeholder.write(". .")
+            time.sleep(1)
+            
+            st.session_state['responses'].append(response)
+            
+            placeholder.write(response)
 
 show()
