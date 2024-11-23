@@ -65,7 +65,7 @@ def get_player_by_number(question):
     all_players = current_players + former_players
     for player in all_players:
         if str(player["number"]) in question:
-            return f"{player['first_name']} {player['last_name']} plays with number {player["number"]}"
+            return f"{player['first_name']} {player['last_name']} plays with number {player['number']}"
     return "I dont realy know."
 
 def is_it_about_player_by_position(question):

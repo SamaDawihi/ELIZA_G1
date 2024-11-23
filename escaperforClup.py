@@ -159,6 +159,13 @@ escaper_forClup = {
             "Victory after victory—24 wins in a row for Al-Hilal!"
         ],
         'counter': 0
+    },
+    # TO DO COMPLET
+    'default_info': {
+        'list': [
+           " difault_info"
+        ],
+        'counter': 0
     }
 }
 

@@ -20,7 +20,7 @@ synonyms = {
     "iconic match": ["memorable game", "historic match"],
     "longest winning streak": ["longest run", "consecutive wins"]
 }
-
+print("hilal")
 # دالة عكسية لتسهيل البحث عن المرادفات
 expanded_terms = {term: key for key, values in synonyms.items() for term in values}
 expanded_terms.update({key: key for key in synonyms.keys()})  # إضافة الكلمات الأساسية نفسها
@@ -69,7 +69,7 @@ def get_club_answers(question):
                 return get_iconic_match()
             elif key == "longest winning streak":
                 return get_longest_winning_streak()
-    return get_hilal_answer_randomly()
+    return get_unexpected_response('default_info')
 
 # الدوال الخاصة بكل سؤال
 
