@@ -4,18 +4,19 @@ from hilal_data import *
 
 def get_achievements_info(question):
     question = ' '.join(question)
-    print("here")
+
 
     # Keywords related to achievements
-    achievement_keywords = {
-        "spl": "Saudi Pro League",
-        "acl": "AFC Champions League",
-        "king cup": "King Cup",
-        "crown prince cup": "Saudi Crown Prince Cup",
-        "fifa club world cup": "FIFA Club World Cup Runners-Up",
-        "saudi super cup": "Saudi Super Cup",
-        "unbeaten season": "Unbeaten Season in Saudi Pro League"
-    }
+    '''achievement_keywords = {
+        "spl": "saudi pro League",
+        "acl": "afc champions league",
+        "king cup": "king cup",
+        "crown prince cup": "saudi crown prince cup",
+        "fifa club world cup": "fifa club world cup runners-up",
+        "saudi super cup": "saudi super cup",
+        "unbeaten season": "unbeaten season in saudi pro league"
+    }'''
+    
 
 
     # Check for the number of times an achievement occurred

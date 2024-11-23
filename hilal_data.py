@@ -42,7 +42,8 @@ former_players = [
 
 
 achievements = [
-   {"title": "Saudi Pro League", "count": 19},
+    {"title": "Saudi Pro League", "count": 19},
+    {"title": "Saudi Professional League", "count": 19},
     {"title": "King Cup", "count": 10},
     {"title": "Saudi Crown Prince Cup", "count": 13},
     {"title": "AFC Champions League", "count": 5},
