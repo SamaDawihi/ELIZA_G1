@@ -25,15 +25,16 @@ expanded_terms = {term: key for key, values in synonyms.items() for term in valu
 expanded_terms.update({key: key for key in synonyms.keys()})  # إضافة الكلمات الأساسية نفسها
 
 # دالة السؤال الرئيسي
-def get_club_questions(question):
+def get_club_answers(question):
     """
     الدالة الرئيسية التي تتعامل مع الأسئلة المتعلقة بنادي الهلال.
     """
+    question = ' '.join(question)
     for term, key in expanded_terms.items():
-        if term in question.lower():
+        if term in question:
             if key == "founded":
                 return get_club_founding_info()
-            elif key == "biggest win":
+            elif key == "biggest win": 
                 return get_biggest_win()
             elif key == "biggest loss":
                 return get_biggest_loss()
@@ -67,7 +68,7 @@ def get_club_questions(question):
                 return get_iconic_match()
             elif key == "longest winning streak":
                 return get_longest_winning_streak()
-    return "I'm sorry, But I don't have enough information about this."
+    return get_hilal_answer_randomly()
 
 # الدوال الخاصة بكل سؤال
 
@@ -126,3 +127,26 @@ def get_longest_winning_streak():
     return "Al-Hilal's longest winning streak was 24 consecutive victories."
 
 
+hilal_answer_counter = 0
+def get_hilal_answer_randomly():
+    global hilal_answer_counter 
+    # TODO complete the list
+    answer_list = [
+        "I don't know what are you talking about, but if you ask about hilal, I just can tell you it is the best team",
+        "Didn't I tell you it was in 1957"
+    ]
+    count = hilal_answer_counter
+    hilal_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
+    return answer_list[count]
+
+hilal_founded_answer_counter = 0
+def get_hilal_founded_answer_randomly():
+    global hilal_founded_answer_counter 
+    # TODO complete the list
+    answer_list = [
+        "Al-Hilal Club was founded on October 16, 1957.",
+        "Didn't I tell you it was in 1957"
+    ]
+    count = hilal_founded_answer_counter
+    hilal_founded_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
+    return answer_list[count]

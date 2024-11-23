@@ -88,7 +88,7 @@ def get_player_answer_randomly(player):
     global player_answer_counter 
     # TODO complete the list
     answer_list = [
-        f"If you are asking me about {player['first_name']} {player['last_name']} he is the {player['c']} of hilal. I like him in that position",
+        f"If you are asking me about {player['first_name']} {player['last_name']} he is the {player['position']} of hilal. I like him in that position",
         f"If you asking about {player['first_name']} {player['last_name']} his number is {player['number']}",        
         f"{player['first_name']} {player['last_name']} is player of hilal with {player['number']} number",        
         f"{player['first_name']} {player['last_name']} his position is {player['position']}",        

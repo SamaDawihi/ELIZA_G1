@@ -70,8 +70,8 @@ def analyze_question(question):
 
     # Check if the question satisfies the club info condition
     if is_it_about_club(question):
-        return get_club_questions(question)
-
+        return get_club_answers(question)
+    
     # Default response if no known conditions are met
     return update_counter("last_escape")
 
