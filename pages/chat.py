@@ -91,8 +91,8 @@ def analyze_question(question):
 
 # This method is to show the porevious questions is the chat
 def show():
-    st.title("Mohammed")
-    st.write("I am Mohammed, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
+    st.title("Abo Rakan")
+    st.write("I am Abo Rakan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
 
     # Initialize or persist chat history
     if 'questions' not in st.session_state:

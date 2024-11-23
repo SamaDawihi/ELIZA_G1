@@ -41,6 +41,16 @@ def get_different_between_sports(question):
                 return "The two sports are the same. Please mention two different sports to compare."
         else:
             return ''
+def get_sport_achievement(q):
+    if [[sport['sport']for sport in alhilal_other_sports_info ] and "achievement" in q]:
+   
+        for sport_info in alhilal_other_sports_info:
+       
+            if sport_info['sport'].lower() in map(str.lower, q):
+                return f"  {sport_info['achievement']}."
+    
+        return "No sport mentioned in the query matches our database. Please specify a valid sport."
+    
     
 def get_all_other_sports(counter):
     counter *= 3 
@@ -67,3 +77,4 @@ def get_all_other_sports_answer_randomly():
     count = all_other_sports_answer_counter
     all_other_sports_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
     return answer_list[count]
+
