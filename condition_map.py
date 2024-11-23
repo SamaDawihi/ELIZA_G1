@@ -125,9 +125,7 @@ def is_it_about_other_sports_answers(question):
     synonym_question = [search(q) for q in question]
     if sport_exists_in_list(question) and 'hilal' in synonym_question:
         return True
-    keywords = [
-        "othersports", "othergames"
-    ]
+    keywords = ["othersports"]
     return any(keyword in question for keyword in keywords)
 
 # club information
