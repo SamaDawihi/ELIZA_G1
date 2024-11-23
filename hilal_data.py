@@ -42,15 +42,22 @@ former_players = [
 
 
 achievements = [
-   {"title": "Saudi Pro League", "count": 19},
-    {"title": "King Cup", "count": 10},
+    {"title": "Cups", "count": 65},
+    {"title": "Saudi Professional League", "count": 19},
+    {"title": "King Cup", "count": 11},
     {"title": "Saudi Crown Prince Cup", "count": 13},
-    {"title": "AFC Champions League", "count": 5},
-    {"title": "FIFA Club World Cup Runners-Up", "year": 2019},
-    {"title": "Saudi Super Cup", "count": 1, "year": 2024},
-    {"title": "Unbeaten Season in Saudi Pro League", "season": "2023–24", "goals_scored": 101, "goals_conceded": 23},
-    {"title": "AFC Champions League Semi-Finals", "year": 2024},
+    {"title": "Saudi Federation Cup", "count": 6},
+    {"title": "Gulf Championships", "count": 2},
+    {"title": "AFC Champions League", "count": 8},
+    {"title": "Arabian Championships", "count": 4},
+    {"title": "Founders Cup", "count": 1},
+    {"title": "Saudi-Egyptian Super Cup", "count": 1},
+    {"title": "Saudi Super Cup", "count": 5},
+    {"title": "Roshn Saudi League", "count": 1, "year": 2023/2024},
 
+    #{"title": "FIFA Club World Cup Runners-Up", "year": 2019},
+    #{"title": "Unbeaten Season in Saudi Pro League", "season": "2023–24", "goals_scored": 101, "goals_conceded": 23},
+    #{"title": "AFC Champions League Semi-Finals", "year": 2024},
 ]
 
 

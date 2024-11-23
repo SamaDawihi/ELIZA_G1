@@ -56,9 +56,6 @@ def analyze_question(question):
     if is_it_about_escape(question):
         return get_escape_answers(question)
 
-    if question_is_about(question) == 'yesno':
-        return get_yesno_answers(question)
-
     if is_it_other_matches(question):
         return get_other_matches_answers(question)
 
@@ -81,6 +78,9 @@ def analyze_question(question):
     # Check if the question satisfies the club info condition
     if is_it_about_club(question):
         return get_club_answers(question)
+    
+    if question_is_about(question) == 'yesno':
+        return get_yesno_answers(question)
     
     # Default response if no known conditions are met
     return update_counter("last_escape")
