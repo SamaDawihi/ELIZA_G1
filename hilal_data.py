@@ -14,7 +14,7 @@ current_players = [
     {"first_name": "Ruben", "last_name": "Neves", "position": "Midfielder", "number": 8}, # roben
     {"first_name": "Sergej", "last_name": "MilinkovicSavic", "position": "Midfielder", "number": 22}, #Savic
     {"first_name": "Mohammed", "last_name": "Kanno", "position": "Midfielder", "number": 28},
-    {"first_name": "Nasser", "last_name": "AlDawsari", "position": "Midfielder", "number": 16}, #kano
+    {"first_name": "Nasser", "last_name": "AlDawsari", "position": "Midfielder", "number": 16}, 
     {"first_name": "Khalid", "last_name": "AlGhannam", "position": "Midfielder", "number": 7},
     {"first_name": "Joao", "last_name": "Cancelo", "position": "Defender", "number": 20},
     {"first_name": "Kalidou", "last_name": "Koulibaly", "position": "Defender", "number": 3}, #kolibaly

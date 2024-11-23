@@ -29,6 +29,11 @@ synonym = {
     'AlHarbi': ['harbi'],
     'AlYami': ['yami'],
     'alowais': ['owais'],
+    'defender':['dfender','dfendr'],
+     'forward':['foward','foward'],
+     'goalkeeper':['goalkeeper'],
+     'wing':['wing',],
+    'midfielder':['midfildr','midfilder'] 
 
 
 
