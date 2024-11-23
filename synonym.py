@@ -11,7 +11,30 @@ synonym = {
     'defender': ['df'],
     # TODO complete the list
     'mohammed': ['mohamed'],
-    'Kanno': ['kano']
+    'Kanno': ['kano'], 
+    'Aldawsari': ['dawsri' , 'dawsari'],
+    'AlGhannam': ['ghannam'],
+    'Mitrovic': ['mitro','metro'],
+    'Malcom': ['malcome' , ],
+    'AlBulayhi': ['bolaihy' , 'bulayhi'],
+    'Leonardo': ['leo', 'lio'],
+    'Neymar': ['nimar'],
+    'Ruben': ['roben'],
+    'Sergej': ['savic'],
+    'Kanno': ['Kano'],
+    'Koulibaly': ['kolibaly'],
+    'AlShahrani': ['sharani'],
+    'AlTambakti': ['tmbakti', 'tombakti ' ,'tmbakti '],
+    'AlQahtani': ['qahtani'],
+    'AlHarbi': ['harbi'],
+    'AlYami': ['yami'],
+    'alowais': ['owais'],
+
+
+
+
+
+
     }
 
 
