@@ -48,6 +48,10 @@ def get_achievements_info(question):
         elif "king" in question:
             return "We won the King cup last year and also in 2023👏"
         
+        elif "last" in question and ("cup" in question or "cups" in question):
+            return "The last cup we won was the Saudi Super Cup against Al Nassr, where we beat them 4-1👏💙"
+
+        
 
     # If none of the above, return a empty message
     return ''
