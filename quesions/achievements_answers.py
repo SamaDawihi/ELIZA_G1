@@ -11,15 +11,15 @@ def get_achievements_info(question):
         elif "roshn" in question:
             return "Alhilal won the Roshn cup last year, and even Alnassr with Ronaldo couldn't help them. Hahahahaha!🤣💙"
         elif "king" in question:
-            return f"We won the King's Cup {next(ach['count'] for ach in achievements if "King Cup" in ach['title'])} times! Can you imagine? Thank god for alhilal"
+            return f"We won the King's Cup {next(ach['count'] for ach in achievements if 'King Cup' in ach['title'])} times! Can you imagine? Thank god for alhilal"
         elif "crown prince" in question:
-            return f"We got this cup {next(ach['count'] for ach in achievements if "Saudi Crown Prince Cup" in ach['title'])} times"
+            return f"We got this cup {next(ach['count'] for ach in achievements if 'Saudi Crown Prince Cup' in ach['title'])} times"
         elif "asian" in question or "acl" in question or "afc" in question or "asia" in question:
-            return f"We got this cup {next(ach['count'] for ach in achievements if "AFC Champions League" in ach['title'])} times!"
+            return f"We got this cup {next(ach['count'] for ach in achievements if 'AFC Champions League' in ach['title'])} times!"
         elif ("cup" in question or "cups" in question) and "last" in question:
             return "Last year, we won three cups: the Roshn Cup, the King Cup, and the Super Cup. It was an amazing season💙"  
         elif "cup" in question or "cups" in question:
-            return f"ًWe have {next(ach['count'] for ach in achievements if "Cups" in ach['title'])} cups! Alhilal GOAT💙🐐!"
+            return f"ًWe have {next(ach['count'] for ach in achievements if 'Cups' in ach['title'])} cups! Alhilal GOAT💙🐐!"
         elif "federation" in question:
             return "We got this cup 6 times I think or may be more 😎"
         elif "gulf" in question:
