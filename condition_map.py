@@ -99,15 +99,13 @@ def is_it_about_achievements(question):
     question = ' '.join(question)
     keywords = [
         # General achievement-related terms
-        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal",
+        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal", "king",
+        "cups", "super", "what is the last cup alhilal got?"
         
         # Specific competition-related terms
-        "pro league", "saudi pro league", "spl", "king cup", "crown prince cup", "super cup", "champions league",
+        "pro", "league", "saudi",  "pro",  "league", "professional", "roshn", "roshen", "spl", "king cup", "crown prince cup", "super cup", "champions league",
         "afc champions league", "fifa club world cup", "unbeaten season", "semi-finals", "runners-up",
-        
-        # General terms related to awards or records
-        "record", "season", "goal", "goals", "scored", "conceded", "goals scored", "goals conceded",
-        
+    
         # Variations of terms indicating number of times
         "how many", "number of times", "count", "times", "repeated", "occurred", "won", "won the", "times won",
         
@@ -115,7 +113,8 @@ def is_it_about_achievements(question):
         "year", "when", "date", "in", "last", "recent",
         
         # Specific achievements
-        "finals", "semi-final", "qualification", "runner-up", "runner up", "placed", "position"
+        "placed", "cup", "cups", "fifa", "afc", "world", "asia", "asian", "acl", "afc", "federation", "gulf",
+        "arabian","founders", "egyptian", "cup"
     ]
 
     return any(keyword in question for keyword in keywords)

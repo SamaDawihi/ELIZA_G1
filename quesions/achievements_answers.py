@@ -8,7 +8,7 @@ def get_achievements_info(question):
     if "many" in question or "how many" in question:
         if "spl" in question or "saudi pro league" in question or "saudi professional league" in question or "league" in question:
             return f"Alhilal won the SPL {next(ach['count'] for ach in achievements if 'Saudi Professional League' in ach['title'])} times! GOAT💙🐐"
-        elif "roshn" in question:
+        elif "roshn" in question or "roshen" in question:
             return "Alhilal won the Roshn cup last year, and even Alnassr with Ronaldo couldn't help them. Hahahahaha!🤣💙"
         elif "king" in question:
             return f"We won the King's Cup {next(ach['count'] for ach in achievements if 'King Cup' in ach['title'])} times! Can you imagine? Thank god for alhilal"
@@ -16,7 +16,7 @@ def get_achievements_info(question):
             return f"We got this cup {next(ach['count'] for ach in achievements if 'Saudi Crown Prince Cup' in ach['title'])} times"
         elif "asian" in question or "acl" in question or "afc" in question or "asia" in question:
             return f"We got this cup {next(ach['count'] for ach in achievements if 'AFC Champions League' in ach['title'])} times!"
-        elif ("cup" in question or "cups" in question) and "last" in question:
+        elif ("cup" in question or "cups" in question or "championship" in question or "champion" in question) and "last" in question:
             return "Last year, we won three cups: the Roshn Cup, the King Cup, and the Super Cup. It was an amazing season💙"  
         elif "cup" in question or "cups" in question:
             return f"ًWe have {next(ach['count'] for ach in achievements if 'Cups' in ach['title'])} cups! Alhilal GOAT💙🐐!"
@@ -41,7 +41,7 @@ def get_achievements_info(question):
             return "Al Hilal was runner-up in the Club World Cup in 2019 🧨"
         elif "super" in question:
             return "We won the Saudi Super Cup last year against al nassr, and I also remember we won it in 2022"
-        elif "roshn" in question or "spl" in question or "saudi pro league" in question or "saudi professional league" in question or "league" in question:
+        elif "roshn" in question or "spl" in question or "saudi pro league" in question or "saudi professional league" in question or "league" in question or "roshn" in question:
             return "We won the Roshn League Cup last year without any losses!🐐💙 I believe Al Hilal's place in Europe is well-deserved 💙🐐"
         elif "asian" in question or "acl" in question or "afc" in question or "asia" in question:
             return "Leader of Asia won the Asian Cup in 2021 😎💙"
