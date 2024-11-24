@@ -40,7 +40,7 @@ def is_it_about_welcoming(question):
 
 def is_it_about_escape(question):
     keywords = [
-        "nassr", 'injuries', 'injury', 'itihad', 'ahli', 'nishimura'
+        "nassr", 'injuries', 'injury', 'itihad', 'ahli', 'nishimura', 'khaleej'
     ]
     for q in question:
         if search(q) in keywords:

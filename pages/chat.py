@@ -15,11 +15,16 @@ import string
 
 # Function to analyze text and respond to questions
 def analyze_question(question):
+    # check if there is question mark in question
     had_question_mark = check_question_mark(question)
+    
+    # remove punctuation
     question = question.translate(str.maketrans('', '', string.punctuation))
+    
+    # str -> list
     question = question.lower().strip().split()
 
-    # If it had question mark before removing puncutation add it to the list
+    # restore question mark if existed
     if had_question_mark:
         question.append('?')
     print(question)
@@ -42,6 +47,7 @@ def analyze_question(question):
     if is_it_about_general_health(question):
         return get_general_health_questions()
     
+    # Bye
     if is_it_about_farewell(question):
         return 'Bye'
     
@@ -49,14 +55,14 @@ def analyze_question(question):
     if len(question) < 3 :
             return "what?"
     
-    # Not a question, Does not have [what, when, ...]
-    if question_is_about(question) == 'not a question':        
-        return update_counter("not_question")
-    
     # If it include escape topics. ex [nassr, injuries]
     if is_it_about_escape(question):
         return get_escape_answers(question)
 
+    # Not a question, Does not have [what, when, ...]
+    if question_is_about(question) == 'not a question':        
+        return update_counter("not_question")
+    
     if is_it_other_matches(question):
         return get_other_matches_answers(question)
 
@@ -68,28 +74,29 @@ def analyze_question(question):
     # Check if the question is about achievements
     if is_it_about_achievements(question):
         answer = get_achievements_info(question)
+
+        # since achievements keywords are too common answer may be empty string
         if answer:
             return answer
 
-    # Check if the question is about general information
+    # Check if the question is about hilal other sports
     if is_it_about_other_sports_answers(question):
         return get_other_sports_answers(question)
 
 
-    # Check if the question satisfies the club info condition
+    # Check if the question about hilal generally
     if is_it_about_club(question):
         return get_club_answers(question)
     
+    # if question is yes/no question, return general answer
     if question_is_about(question) == 'yesno':
         return get_yesno_answers(question)
     
-    # Default response if no known conditions are met
+    # Default response if no known conditions were met
     return update_counter("last_escape")
 
 
-
-
-# This method is to show the porevious questions is the chat
+# holds the page elements
 def show():
     st.title("Abu Rakan")
     st.write("I am Abu Rakan, Ask me anything about Al-Hilal and I will tell you how Al-Hilal is a great team.")
