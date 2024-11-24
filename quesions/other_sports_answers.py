@@ -55,7 +55,7 @@ def get_sport_achievement(q):
             if sport_info['sport'].lower() in map(str.lower, q):
                 return f"  {sport_info['achievement']}."
     
-        return "No sport mentioned in the query matches our database. Please specify a valid sport."
+        return "I dont know this sport."
     
     
 def get_all_other_sports(counter):

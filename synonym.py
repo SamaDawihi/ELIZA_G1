@@ -36,10 +36,9 @@ synonym = {
     'wing':['wing',],
     'midfielder':['midfildr','midfilder', 'center'],
     'different':['different','difference'],
-    'achievement':['achievement','success','accomplishment','reward'],
-    'othersports' : ['sports',"othergames",'games','differentgames','different-games','other-games','othersports','other-sports'],
-    'volleyball' : ['volleyball','vollyball','volyball'],
-    'basketball' : ['basketball','basktball','basketbal']
+    'achievement':['achievement','success','accomplishment','reward','cup'],
+    'othersports' : ['sports',"othergames",'games','differentgames','different-games','other-games','othersports','other-sports','othersport'],
+   
     }
 
 
