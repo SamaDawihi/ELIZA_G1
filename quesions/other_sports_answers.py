@@ -1,11 +1,17 @@
 from hilal_data import *
+from synonym import search
+
 def get_other_sports_answers(question):
+    question = [search(q) for q in question]
+    
     answer = get_different_between_sports(question)
     if answer:
         return answer
     
     sport = sport_exists_in_list(question)
     if sport:
+        if "achievement" in question:
+            return get_sport_achievement(sport)
         return get_sport_description(sport)
     
     return get_all_other_sports_answer_randomly()
@@ -18,7 +24,7 @@ def sport_exists_in_list(question):
     return None
 
 def get_sport_description(sport):
-        return f"{sport['description']}."
+        return f"I think {sport['description']}."
     
 def get_different_between_sports(question):
     if [[sport['sport']for sport in alhilal_other_sports_info ] and "different" in question] :
@@ -47,9 +53,9 @@ def get_sport_achievement(q):
         for sport_info in alhilal_other_sports_info:
        
             if sport_info['sport'].lower() in map(str.lower, q):
-                return f" {sport_info['achievement'] } 🐐."
+                return f"  {sport_info['achievement']}."
     
-        return "I dont't know this sport 😁"
+        return "No sport mentioned in the query matches our database. Please specify a valid sport."
     
     
 def get_all_other_sports(counter):

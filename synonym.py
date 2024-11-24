@@ -34,11 +34,6 @@ synonym = {
     'goalkeeper':['goalkeeper', 'gk'],
     'wing':['wing',],
     'midfielder':['midfildr','midfilder', 'center'],
-    'different':['different','difference'],
-    'achievement':['achievement','success','accomplishment','reward'],
-    'othersports' : ['sports',"othergames",'games','differentgames','different-games','other-games','othersports','other-sports'],
-    'Volleyball' : ['Volleyball','Vollyball','Volyball'],
-    'Basketball' : ['Basketball','Basktball','Basketbal']
     }
 
 
