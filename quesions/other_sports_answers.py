@@ -47,16 +47,8 @@ def get_different_between_sports(question):
                 return "Both sports are the same 😒"
         else:
             return ''
-def get_sport_achievement(q):
-    if [[sport['sport']for sport in alhilal_other_sports_info ] and "achievement" in q]:
-   
-        for sport_info in alhilal_other_sports_info:
-       
-            if sport_info['sport'].lower() in map(str.lower, q):
-                return f"  {sport_info['achievement']}."
-    
-        return "I dont know this sport."
-    
+def get_sport_achievement(sport):
+    return f"  {sport['achievement']}."    
     
 def get_all_other_sports(counter):
     counter *= 3 
