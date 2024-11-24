@@ -1,8 +1,12 @@
 # Eliza Task
 
-## Brief Introduction
+## Brief Introduction of Task
 
 The Eliza Task is inspired by one of the first natural language processing (NLP) programs, ELIZA, developed by Joseph Weizenbaum at MIT in the 1960s. ELIZA uses pattern matching and substitution to simulate human-like conversations. The most famous script, "DOCTOR," emulates a Rogerian psychotherapist. This task challenges you to build a web-based version of ELIZA that can interact with users by simulating a conversation.
+
+## Our Implementation
+We have build a chatbot that represent hilal team fan.
+It gives basic information about Al-hilal team, and hate talking about anything else.
 
 ## Requirements
 
