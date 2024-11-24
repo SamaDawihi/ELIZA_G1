@@ -25,9 +25,6 @@ def sport_exists_in_list(question):
 
 def get_sport_description(sport):
         return f"I think {sport['description']}."
-
-def get_sport_achievement(sport):
-    return f"I think {sport['achievement']}."
     
 def get_different_between_sports(question):
     if [[sport['sport']for sport in alhilal_other_sports_info ] and "different" in question] :
@@ -47,11 +44,18 @@ def get_different_between_sports(question):
                 if sport1_info and sport2_info:
                     return f"{sport1_info['sport']}: {sport1_info['description']}\n{sport2_info['sport']}: {sport2_info['description']}"
             else:
-                return "The two sports are the same. Please mention two different sports to compare."
+                return "Both sports are the same 😒"
         else:
             return ''
-        
-
+def get_sport_achievement(q):
+    if [[sport['sport']for sport in alhilal_other_sports_info ] and "achievement" in q]:
+   
+        for sport_info in alhilal_other_sports_info:
+       
+            if sport_info['sport'].lower() in map(str.lower, q):
+                return f"  {sport_info['achievement']}."
+    
+        return "No sport mentioned in the query matches our database. Please specify a valid sport."
     
     
 def get_all_other_sports(counter):
@@ -60,7 +64,7 @@ def get_all_other_sports(counter):
         counter = 0
     last = counter + 3 
 
-    # Format the current slice of players
+    
     other_sports = ", ".join(
         [f"{s['sport']}" for s in alhilal_other_sports_info[counter:last]]
     )
@@ -70,11 +74,10 @@ def get_all_other_sports(counter):
 all_other_sports_answer_counter = 0
 def get_all_other_sports_answer_randomly():
     global all_other_sports_answer_counter 
-    # TODO complete the list
     answer_list = [
-        f"1 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
-        f"2 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
-        f"3 If you are asking me about hilal players the best for me are: {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
+        f" {get_all_other_sports(all_other_sports_answer_counter)}",    
     ]
     count = all_other_sports_answer_counter
     all_other_sports_answer_counter = count + 1 if count < len(answer_list) - 1 else 0

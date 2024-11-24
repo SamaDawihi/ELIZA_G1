@@ -10,6 +10,8 @@ def get_escape_answers(question):
         return update_counter("itihad_escape")
     if 'ahli' in question:
         return update_counter("ahli_escape")
+    if 'khaleej' in question:
+        return update_counter("khaleej_escape")
     if 'nishimura' in question:
         return update_counter("nishimura_escape")
     if 'injury' in question or 'injuries' in question:

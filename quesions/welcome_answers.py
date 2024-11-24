@@ -10,4 +10,4 @@ def get_welcome(question):
     return "Salam"
         
 def get_general_health_questions():
-    return "I am good as long Alhilal is good"
+    return "I had a bad night"

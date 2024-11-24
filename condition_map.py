@@ -40,7 +40,7 @@ def is_it_about_welcoming(question):
 
 def is_it_about_escape(question):
     keywords = [
-        "nassr", 'injuries', 'injury', 'itihad', 'ahli', 'nishimura'
+        "nassr", 'injuries', 'injury', 'itihad', 'ahli', 'nishimura', 'khaleej'
     ]
     for q in question:
         if search(q) in keywords:
@@ -99,15 +99,13 @@ def is_it_about_achievements(question):
     question = ' '.join(question)
     keywords = [
         # General achievement-related terms
-        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal",
+        "achievement", "cup", "title", "champion", "trophy", "win", "victory", "honor", "medal", "king",
+        "cups", "super", "what is the last cup alhilal got?"
         
         # Specific competition-related terms
-        "pro league", "saudi pro league", "spl", "king cup", "crown prince cup", "super cup", "champions league",
+        "pro", "league", "saudi",  "pro",  "league", "professional", "roshn", "roshen", "spl", "king cup", "crown prince cup", "super cup", "champions league",
         "afc champions league", "fifa club world cup", "unbeaten season", "semi-finals", "runners-up",
-        
-        # General terms related to awards or records
-        "record", "season", "goal", "goals", "scored", "conceded", "goals scored", "goals conceded",
-        
+    
         # Variations of terms indicating number of times
         "how many", "number of times", "count", "times", "repeated", "occurred", "won", "won the", "times won",
         
@@ -115,7 +113,8 @@ def is_it_about_achievements(question):
         "year", "when", "date", "in", "last", "recent",
         
         # Specific achievements
-        "finals", "semi-final", "qualification", "runner-up", "runner up", "placed", "position"
+        "placed", "cup", "cups", "fifa", "afc", "world", "asia", "asian", "acl", "afc", "federation", "gulf",
+        "arabian","founders", "egyptian", "cup"
     ]
 
     return any(keyword in question for keyword in keywords)
@@ -125,10 +124,8 @@ def is_it_about_other_sports_answers(question):
     synonym_question = [search(q) for q in question]
     if sport_exists_in_list(question) and 'hilal' in synonym_question:
         return True
-    keywords = [
-        "othersports", "othergames"
-    ]
-    return any(keyword in question for keyword in keywords)
+    keywords = ["othersports"]
+    return any(keyword in synonym_question for keyword in keywords)
 
 # club information
 def is_it_about_club(question):
