@@ -7,6 +7,7 @@ synonym = {
     'nassr': ['naser', 'alnaser', 'al-naser', 'nassr', 'alnassr', 'al-nassr', 'nasser', 'alnasser', 'al-nasser'],
     'itihad': ['itihad', 'alitihad', 'al-itihad', 'ittihad', 'alittihad', 'al-ittihad'],
     'ahli': ['ahly', 'alahly', 'al-ahly', 'ahli', 'alahli', 'al-ahli',],
+    'khaleej': ['khaleej', 'alkhaleej', 'khalig', 'khaleag', 'khaleaj', 'khalij', 'khaleg', 'khalej', 'alkhalig', 'alkhalij', 'alkhaleag', 'alkhaleaj', 'c', 'alkhalej', ],
     'nishimura': ['nishimora'],
     'defender': ['df'],
     # TODO complete the list
@@ -37,8 +38,8 @@ synonym = {
     'different':['different','difference'],
     'achievement':['achievement','success','accomplishment','reward'],
     'othersports' : ['sports',"othergames",'games','differentgames','different-games','other-games','othersports','other-sports'],
-    'Volleyball' : ['Volleyball','Vollyball','Volyball'],
-    'Basketball' : ['Basketball','Basktball','Basketbal']
+    'volleyball' : ['volleyball','vollyball','volyball'],
+    'basketball' : ['basketball','basktball','basketbal']
     }
 
 

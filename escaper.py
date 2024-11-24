@@ -49,6 +49,13 @@ escapers = {
         "never mind ahli, let's talk about something important",
         ],
         'counter': 0},
+    'khaleej_escape': {
+        'list': [
+        "please dont remind me",
+        "I am trying to forget",
+        "it's all because of the defenders",
+        ],
+        'counter': 0},
 
     'other_teams_escape': {
         'list': [
