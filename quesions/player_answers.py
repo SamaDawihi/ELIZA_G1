@@ -7,9 +7,11 @@ def get_player_questions(question):
     
     positions = ["defender", "midfielder", "forward", "goalkeeper", "wing"]
     if "position" in question or ("who" in question and ("plays" in question or "play" in question) and "as" in question) or any(position in question for position in positions):
+        # ask about players in this position
         if is_it_about_player_by_position(question):  
             return get_players_by_position(question)
         else:
+            #give me the position of this player
             player = get_player_in_question(question)  
             if player != '':  
                 return get_player_position_by_name(player)
@@ -19,16 +21,16 @@ def get_player_questions(question):
     if "number" in question or ("who" in question and ("wears" in question or "holds" in question)) or ("player" in question and "with" in question and "number" in question):
         if any(q.isdigit() for q in question):
             return get_player_by_number(question)
-        
+        #What is Salem Aldawsari's number?
         player = get_player_in_question(question)  
         if player != '': 
             return get_player_number_by_name(player)
 
-
+    #when ask about  player by name
     player = get_player_in_question(question)
     if player != '':
         return get_player_by_name(question)
-    
+    #when ask about current player in random 
     if 'former' in question:
         return get_all_former_players_answer_randomly()
 
@@ -74,12 +76,14 @@ def is_it_about_player_by_position(question):
 
 def get_player_in_question(question):
     question = [search(q) for q in question]
+    #when both names are in question
     for player in current_players + former_players:
         if player["first_name"].lower() in question and player["last_name"].lower() in question:
             return player
+        #when one of the names (اسم العائله بس مثلا)is in question
     for player in current_players + former_players:
-        if player["first_name"].lower() in question or player["last_name"].lower() in question:
-            return player
+       if player["first_name"].lower() in question or player["last_name"].lower() in question:
+           return player
     return ''
 
 player_answer_counter = 0
@@ -92,10 +96,12 @@ def get_player_answer_randomly(player):
         f"{player['first_name']} {player['last_name']} his position is {player['position']}No one can dominate the field in that position like him. He’s simply unmatched",        
         f"{player['first_name']} {player['last_name']} is one of my favirate players",        
     ]
+    # Get the current count value to decide which response to return
     count = player_answer_counter
+    # Increment the counter or reset it if the end of the list is reached
     player_answer_counter = count + 1 if count < len(answer_list) - 1 else 0
+    # Return the selected response based on the current count
     return answer_list[count]
-
 
 
 def get_all_players(counter):
